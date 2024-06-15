@@ -1,0 +1,9 @@
+{
+  "file": "./models/stations.json",
+  "stations": [
+    {
+      "title": "tramore",
+      "_id": "84657646-bd8f-4893-8788-3b002421a5f3"
+    }
+  ]
+}

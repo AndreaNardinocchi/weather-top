@@ -1,0 +1,19 @@
+{
+  "file": "./models/tracks.json",
+  "tracks": [
+    {
+      "title": "Cork",
+      "artist": "Blackrock",
+      "duration": 34,
+      "_id": "2e678a4d-a5ce-422b-ae62-4d780a2f27c3",
+      "stationid": "84657646-bd8f-4893-8788-3b002421a5f3"
+    },
+    {
+      "title": "Dublin",
+      "artist": "Dublin 2",
+      "duration": 150,
+      "_id": "61908cdd-663d-4485-9fd6-01c07d788dd6",
+      "stationid": "84657646-bd8f-4893-8788-3b002421a5f3"
+    }
+  ]
+}
