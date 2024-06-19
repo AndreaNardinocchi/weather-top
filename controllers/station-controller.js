@@ -21,4 +21,11 @@ export const stationController = {
     await trackStore.addTrack(station._id, newTrack);
     response.redirect("/station/" + station._id);
   },
+   async deleteTrack(request, response) {
+    const stationId = request.params.stationid;
+    const trackId = request.params.trackid;
+    console.log(`Deleting Track ${trackId} from Station ${stationId}`);
+    await trackStore.deleteTrack(request.params.trackId);
+    response.redirect("/station/" + stationId);
+  },
 };

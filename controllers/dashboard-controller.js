@@ -17,4 +17,10 @@ export const dashboardController = {
     await weatherStation.addStation(newWeatherStation);
     response.redirect("/dashboard");
   },
+  async deleteStation(request, response) {
+    const stationId = request.params.id;
+    console.log(`Deleting Station ${stationId}`);
+    await weatherStation.deleteStationById(stationId);
+    response.redirect("/dashboard");
+  },
 };
