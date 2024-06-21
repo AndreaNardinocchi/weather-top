@@ -1,3 +1,4 @@
+import { trackController } from "./controllers/track-controller.js";
 import { accountsController } from './controllers/accounts-controller.js';
 import { stationController } from "./controllers/station-controller.js";
 import express from "express";
@@ -20,3 +21,5 @@ router.get("/signup", accountsController.signup);
 router.get("/logout", accountsController.logout);
 router.post("/register", accountsController.register);
 router.post("/authenticate", accountsController.authenticate);
+router.get("/station/:stationid/edittrack/:trackid", trackController.index);
+router.post("/station/:stationid/updatetrack/:trackid", trackController.update);
