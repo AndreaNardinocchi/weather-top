@@ -2,14 +2,14 @@ import { accountsController } from "./accounts-controller.js";
 import { weatherStation } from "../models/station-store.js";
 
 export const dashboardController = {
-  async index(request, response) {
+ /* async index(request, response) {
     const viewData = {
       title: "Forecast Stations Dashboard",
       stations: await weatherStation.getAllStations(),
     };
     console.log("dashboard rendering");
     response.render("dashboard-view", viewData);
-  },
+  }, */
   
   async index(request, response) {
     const loggedInUser = await accountsController.getLoggedInUser(request);
@@ -21,7 +21,7 @@ export const dashboardController = {
     response.render("dashboard-view", viewData);
   },
   
-  async addStation(request, response) {
+ /* async addStation(request, response) {
     const newWeatherStation = {
       title: request.body.title,
     };
@@ -29,7 +29,7 @@ export const dashboardController = {
     await weatherStation.addStation(newWeatherStation);
     response.redirect("/dashboard");
   },
-  
+ */
   async addStation(request, response) {
     const loggedInUser = await accountsController.getLoggedInUser(request);
     const newStation = {
