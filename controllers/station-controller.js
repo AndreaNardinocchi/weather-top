@@ -18,11 +18,14 @@ export const stationController = {
   async addTrack(request, response) {
     const station = await weatherStation.getStationById(request.params.id);
     const newTrack = {
-      title: request.body.title,
-      artist: request.body.artist,
-      duration: Number(request.body.duration),
+      code: Number(request.body.code),
+      temperature: Number(request.body.temperature),
+      windSpeed: Number(request.body.windSpeed),
+      windDirection: Number(request.body.windDirection),
+      windSpeed: Number(request.body.windSpeed),
+      pressure: Number(request.body.pressure),
     };
-    console.log(`adding track ${newTrack.title}`);
+    console.log(`adding track ${newTrack.code}`);
     await trackStore.addTrack(station._id, newTrack);
     response.redirect("/station/" + station._id);
   },

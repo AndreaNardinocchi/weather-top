@@ -7,3 +7,4 @@ export const aboutController = {
     response.render("about-view", viewData);
   },
 };
+

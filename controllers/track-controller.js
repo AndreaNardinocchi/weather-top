@@ -18,9 +18,12 @@ export const trackController = {
     const stationId = request.params.stationid;
     const trackId = request.params.trackid;
     const updatedTrack = {
-      title: request.body.title,
-      artist: request.body.artist,
-      duration: Number(request.body.duration),
+      code: Number(request.body.code),
+      temperature: Number(request.body.temperature),
+      windSpeed: Number(request.body.windSpeed),
+      windDirection: Number(request.body.windDirection),
+      windSpeed: Number(request.body.windSpeed),
+      pressure: Number(request.body.pressure),
     };
     console.log(`Updating Track ${trackId} from Station ${stationId}`);
     const track = await trackStore.getTrackById(trackId);

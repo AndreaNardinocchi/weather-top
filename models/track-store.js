@@ -41,9 +41,11 @@ export const trackStore = {
   },
 
   async updateTrack(track, updatedTrack) {
-    track.title = updatedTrack.title;
-    track.artist = updatedTrack.artist;
-    track.duration = updatedTrack.duration;
+    track.code = updatedTrack.code;
+    track.temperature = updatedTrack.temperature;
+    track.windSpeed = updatedTrack.windSpeed;
+    track.windDirection = updatedTrack.windDirection;
+    track.windPressure = updatedTrack.windPressure;
     await db.write();
   },
 };
