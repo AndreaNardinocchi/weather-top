@@ -1,12 +1,153 @@
-{{> menu}}
+{{> welcome-menu }}
+
+<section class=" columns  mt-6 pt-6">
+
+ <section class="column ">
+      
+        <section class="card has-background-black">
+          <header class="card-header">
+            <p class="card-header-title is-size-4  has-text-white title">
+              {{station.title}}
+            </p>
+          </header>
+          <div class="card-image">
+            <figure class="image is-64x64 m-auto">
+              <img id="cityfocus-1-image" >
+            </figure>
+          </div>
+          <div class="columns">
+            <div class="column is-12">
+              <article class="card-content">
+                <p class="content is-size-6 has-text-white">
+                   Lat: {{station.latitude}} <br>
+                   Long: {{station.longitude}}
+                </p>
+              </article>
+            </div>
+          
+          </div>
+        </section>
+ </section>
+
+         <section class="column ">
+      
+        <section class="card has-background-black">
+          <header class="card-header">
+            <p class="card-header-title is-size-4  has-text-white title">
+              Weather
+            </p>
+          </header>
+          <div class="card-image">
+            <figure class="image is-64x64 m-auto">
+              <img id="cityfocus-1-image" >
+            </figure>
+          </div>
+          <div class="columns">
+            <div class="column is-12">
+              <article class="card-content">
+                <p class="content is-size-6 has-text-white">
+                  <br>
+                   Rain
+                </p>
+              </article>
+            </div>
+          
+          </div>
+        </section>
+        </section>
+        <section class="column ">
+      
+        <section class="card has-background-black">
+          <header class="card-header">
+            <p class="card-header-title is-size-4  has-text-white title">
+              Temp
+            </p>
+          </header>
+          <div class="card-image">
+            <figure class="image is-64x64 m-auto">
+              <img id="cityfocus-1-image" >
+            </figure>
+          </div>
+          <div class="columns">
+            <div class="column is-12">
+             
+              <article class="card-content">
+             
+                <p class="temperature content is-size-6 has-text-white">
+                 
+                 Max:  {{maxTempReport.temperature}} °C<br>
+                 Min:  {{minTempReport.temperature}} °C
+                </p>
+                
+              </article>
+              
+            </div>
+          
+          </div>
+        </section>
+        </section>
+        <section class="column ">
+      
+        <section class="card has-background-black">
+          <header class="card-header">
+            <p class="card-header-title is-size-4  has-text-white title">
+              Wind
+            </p>
+          </header>
+          <div class="card-image">
+            <figure class="image is-64x64 m-auto">
+              <img id="cityfocus-1-image" >
+            </figure>
+          </div>
+          <div class="columns">
+            <div class="column is-12">
+              <article class="card-content">
+                <p class="content is-size-6 has-text-white">
+                   Max speed: {{maxWindSpeedReport.windSpeed}} kMh<br>
+                   Min speed: {{minWindSpeedReport.windSpeed}} kMh
+                </p>
+              </article>
+            </div>
+          
+          </div>
+        </section>
+        </section>
+        <section class="column ">
+      
+        <section class="card has-background-black">
+          <header class="card-header">
+            <p class="card-header-title is-size-4  has-text-white title">
+              Pressure
+            </p>
+          </header>
+          <div class="card-image">
+            <figure class="image is-64x64 m-auto">
+              <img id="cityfocus-1-image" >
+            </figure>
+          </div>
+          <div class="columns">
+            <div class="column is-12">
+              <article class="card-content">
+                <p class="content is-size-6 has-text-white">
+                   Max: {{maxPressureReport.pressure}} hPa<br>
+                   Min: {{minPressureReport.pressure}} hPa
+                </p>
+              </article>
+            </div>
+          
+          </div>
+        </section>
+        </section>
+
+     
+     
+    </section>
+    </section>
+
 
 <section class="section">
-  <div class="title">
-    {{station.title}}
-  </div>
-  <div class="subtitle">
-    Shortest Track: {{shortestTrack.title}}
-  </div>
-  {{> list-tracks}}
-  {{> add-track}}
+
+  
+  {{> list-reports}}
+  {{> add-report}}
 </section>

@@ -34,6 +34,8 @@ export const dashboardController = {
     const loggedInUser = await accountsController.getLoggedInUser(request);
     const newStation = {
       title: request.body.title,
+      latitude: request.body.latitude,
+      longitude: request.body.longitude,
       userid: loggedInUser._id,
     };
     console.log(`adding station ${newStation.title}`);
@@ -48,3 +50,4 @@ export const dashboardController = {
     response.redirect("/dashboard");
   },
 };
+

@@ -11,30 +11,30 @@
     </tr>
   </thead>
   <tbody>
-    {{#each station.tracks}}
+    {{#each station.reports}}
     <tr>
       <td>
         {{code}}
       </td>
       <td>
-        {{temperature}}
+        {{temperature}} °C 
       </td>
       <td>
-        {{windSpeed}}
+        {{windSpeed}} kMh
       </td>
       <td>
-        {{windDirection}}
+        {{windDirection}} 
       </td>
       <td>
-        {{pressure}}
+        {{pressure}} hPa
       </td>
       <td>
-        <a href="/station/{{../station._id}}/edittrack/{{_id}}" class="button">
+        <a href="/station/{{../station._id}}/editreport/{{_id}}" class="button">
           {{>icons/edit}}
         </a>
       </td>
       <td>
-        <a href="/station/{{../station._id}}/deletetrack/{{_id}}" class="button">
+        <a href="/station/{{../station._id}}/deletereport/{{_id}}" class="button">
           {{>icons/delete}}
         </a>
       </td>

@@ -1,40 +1,52 @@
 import { stationAnalytics } from "../utils/station-analytics.js";
-import { trackStore } from "../models/track-store.js";
+import { reportStore } from "../models/report-store.js";
 import { weatherStation } from "../models/station-store.js";
 
 export const stationController = {
   async index(request, response) {
     const station = await weatherStation.getStationById(request.params.id);
-    const shortestTrack = stationAnalytics.getShortestTrack(station);
+    const fastestWindReport = stationAnalytics.getFastestWindReport(station);
+    const maxTempReport = stationAnalytics.getMaxTempReport(station);
+    const minTempReport = stationAnalytics.getMinTempReport(station);
+    const maxWindSpeedReport = stationAnalytics.getMaxWindSpeedReport(station);
+    const minWindSpeedReport= stationAnalytics.getMinWindSpeedReport(station);
+    const maxPressureReport = stationAnalytics.getMaxPressureReport(station);
+    const minPressureReport = stationAnalytics.getMinPressureReport(station);
     
     const viewData = {
       title: "Station",
       station: station,
-      shortestTrack: shortestTrack,
+      fastestWindReport: fastestWindReport,
+      maxTempReport: maxTempReport,
+      minTempReport: minTempReport,
+      maxWindSpeedReport: maxWindSpeedReport,
+      minWindSpeedReport: minWindSpeedReport,
+      maxPressureReport: maxPressureReport,  
+      minPressureReport: minPressureReport,
     };
     response.render("station-view", viewData);
   },
   
-  async addTrack(request, response) {
+  async addReport(request, response) {
     const station = await weatherStation.getStationById(request.params.id);
-    const newTrack = {
+    const newReport = {
       code: Number(request.body.code),
       temperature: Number(request.body.temperature),
       windSpeed: Number(request.body.windSpeed),
-      windDirection: Number(request.body.windDirection),
+      windDirection: request.body.windDirection,
       windSpeed: Number(request.body.windSpeed),
       pressure: Number(request.body.pressure),
     };
-    console.log(`adding track ${newTrack.code}`);
-    await trackStore.addTrack(station._id, newTrack);
+    console.log(`adding report ${newReport.code}`);
+    await reportStore.addReport(station._id, newReport);
     response.redirect("/station/" + station._id);
   },
   
-   async deleteTrack(request, response) {
+   async deleteReport(request, response) {
     const stationId = request.params.stationid;
-    const trackId = request.params.trackid;
-    console.log(`Deleting Track ${trackId} from Station ${stationId}`);
-    await trackStore.deleteTrack(request.params.trackId);
+    const reportId = request.params.reportid;
+    console.log(`Deleting Report ${reportId} from Station ${stationId}`);
+    await reportStore.deleteReport(request.params.reportId);
     response.redirect("/station/" + stationId);
   },
 };

@@ -1,7 +1,10 @@
 {{> welcome-menu active="login"}}
 
-<section class="section">
-  <h1 class="title">Log in</h1>
+<section class="section mt-6">
+  <h1 class="title pt-4 pb-6 has-text-centered"> Log in </h1>
+<section class="columns">
+  
+  <section class = "column is-6 mt-6 pt-6">
   <form action="/authenticate" method="POST">
     <div class="field">
       <label class="label">Email</label> <input class="input" type="text" placeholder="Enter email" name="email">
@@ -14,3 +17,14 @@
     </div>
   </form>
 </section>
+<section class="column is-6 px-6">
+     <section  class="card has-text-centered has-background-info-light px-6">
+          
+ <div class="card-image">
+            <figure class="image is-256x256 m-auto">
+              <img src="https://i.ibb.co/st6XQZz/sun-log-in.png" alt="sun" border="0">
+            </figure>
+          </div>
+     </section>
+
+  </section>

@@ -1,4 +1,4 @@
-import { trackStore } from "./track-store.js";
+import { reportStore } from "./report-store.js";
 import { v4 } from "uuid";
 import { initStore } from "../utils/store-utils.js";
 
@@ -21,7 +21,7 @@ export const weatherStation = {
   async getStationById(id) {
     await db.read();
     const list = db.data.stations.find((station) => station._id === id);
-    list.tracks = await trackStore.getTracksByStationId(list._id);
+    list.reports = await reportStore.getReportsByStationId(list._id);
     return list;
   },
 
