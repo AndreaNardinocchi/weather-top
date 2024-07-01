@@ -26,10 +26,23 @@ export const accountsController = {
     };
     response.render("signup-view", viewData);
   },
+  
+  account(request, response) {
+    const viewData = {
+      title: "Account",
+    };
+    response.render("account-view", viewData);
+  },
 
   async register(request, response) {
     const user = request.body;
     await userStore.addUser(user);
+    const newUser = {
+      firstName: request.body.firstName,
+      lastName: request.body.lastName,
+      email: request.body.email,
+      password: request.body.password,
+    };
     console.log(`registering ${user.email}`);
     response.redirect("/");
   },
@@ -49,6 +62,8 @@ export const accountsController = {
     const userEmail = request.cookies.station;
     return await userStore.getUserByEmail(userEmail);
   },
+  
+ 
   
   async update(request, response) {
     const stationId = request.params.stationid;

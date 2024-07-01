@@ -44,7 +44,7 @@ export const stationController = {
       windDirection: request.body.windDirection,
       windSpeed: Number(request.body.windSpeed),
       pressure: Number(request.body.pressure),
-      currentHour: dayjs().format("YYYY-MM-DD HH:mm:ss") // Adding curren time
+      currentHour: dayjs().format("YYYY-MM-DD HH:mm:ss") // Adding current time
     };
     console.log(`adding report ${newReport.code}`);
     await reportStore.addReport(station._id, newReport);

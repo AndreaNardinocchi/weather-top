@@ -2,8 +2,6 @@
   <label>Enter Station Details:</label>
   <div class="field is-horizontal">
     <div class="field-body">
-       
-        <input class="input" type="hidden" name="currentHour">
       
       <div class="field">
         <input class="input" type="text" placeholder="Enter Code" name="code">
@@ -19,7 +17,7 @@
    
     <div class="field is-horizontal">
 
-      <input class ="input mr-3" type="text" name="windDirection" placeholder = "Enter or select the wind direction" list="windDirection">
+      <input class ="input mr-3" type="text" name="windDirection" placeholder = "Enter or select the wind direction" list="windDirection" value="{{report.windDirection}}">
     <datalist id="windDirection">
       <option value="West-northwest (WNW)" >West-northwest (WNW)</option>
     <option value="North-northwest (NNW)">North-northwest (NNW)</option>

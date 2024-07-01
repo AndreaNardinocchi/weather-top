@@ -39,13 +39,13 @@
       "stationid": "f70df5ed-49ea-409c-ad4b-76172098dbe7"
     },
     {
-      "code": 521,
+      "code": 300,
       "temperature": 0,
       "windSpeed": 0,
       "windDirection": "",
       "pressure": 0,
-      "currentHour": "2024-06-30 20:59:13",
-      "_id": "f870347e-7bd0-48e4-a7d2-351db0909688",
+      "currentHour": "2024-07-01 21:31:55",
+      "_id": "81d61e73-6c85-4ed4-b8c2-a45059ab8efd",
       "stationid": "9665572b-40ed-4147-a748-6905f846ae07"
     }
   ]

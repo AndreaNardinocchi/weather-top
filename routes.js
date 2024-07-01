@@ -7,6 +7,7 @@ import { aboutController } from "./controllers/about-controller.js";
 import { lifestyleController } from "./controllers/lifestyle-controller.js";
 import { newsController } from "./controllers/news-controller.js";
 
+
 export const router = express.Router();
 
 // router.get("/", dashboardController.index);
@@ -23,6 +24,7 @@ router.get("/", accountsController.index);
 router.get("/login", accountsController.login);
 router.get("/signup", accountsController.signup);
 router.get("/logout", accountsController.logout);
+router.get("/account", accountsController.account);
 router.post("/register", accountsController.register);
 router.post("/authenticate", accountsController.authenticate);
 router.get("/station/:stationid/editreport/:reportid", reportController.index);

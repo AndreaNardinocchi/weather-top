@@ -1,7 +1,7 @@
 export const lifestyleController = {
     index(request, response) {
       const viewData = {
-        title: "",
+        title: "Lifestyle",
       };
       console.log("lifestyle rendering");
       response.render("lifestyle-view", viewData);

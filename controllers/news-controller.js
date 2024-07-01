@@ -1,7 +1,7 @@
 export const newsController = {
     index(request, response) {
       const viewData = {
-        title: "",
+        title: "News",
       };
       console.log("news rendering");
       response.render("news-view", viewData);
