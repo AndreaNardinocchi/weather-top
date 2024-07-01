@@ -1,1 +1,52 @@
-{"file":"./models/reports.json","reports":[]}
+{
+  "file": "./models/reports.json",
+  "reports": [
+    {
+      "code": 900,
+      "temperature": 34,
+      "windSpeed": 200,
+      "windDirection": "South-southeast (SSE)",
+      "pressure": 89,
+      "_id": "5b23e337-464a-4395-836e-50cb11911265",
+      "stationid": "5226f2da-44b3-4390-8285-a69e31781875"
+    },
+    {
+      "currentHour": "",
+      "code": 300,
+      "temperature": 78,
+      "windSpeed": 20,
+      "windDirection": "East-northeast (ENE)",
+      "pressure": 90,
+      "_id": "2675f3ff-ee33-40b1-b7a6-19c117bb0ca3",
+      "stationid": "5226f2da-44b3-4390-8285-a69e31781875"
+    },
+    {
+      "code": 300,
+      "temperature": 67,
+      "windSpeed": 78,
+      "windDirection": "West-southwest (WSW)",
+      "pressure": 23,
+      "_id": "2f576998-7ff3-4429-9360-020953d58985",
+      "stationid": "c077436c-1602-468c-907d-56503bd07230"
+    },
+    {
+      "code": 100,
+      "temperature": 45,
+      "windSpeed": 900,
+      "windDirection": "East-southeast (ESE)",
+      "pressure": 56,
+      "_id": "6ada089d-a544-473f-ac2c-2cd038adcd13",
+      "stationid": "f70df5ed-49ea-409c-ad4b-76172098dbe7"
+    },
+    {
+      "code": 521,
+      "temperature": 0,
+      "windSpeed": 0,
+      "windDirection": "",
+      "pressure": 0,
+      "currentHour": "2024-06-30 20:59:13",
+      "_id": "f870347e-7bd0-48e4-a7d2-351db0909688",
+      "stationid": "9665572b-40ed-4147-a748-6905f846ae07"
+    }
+  ]
+}

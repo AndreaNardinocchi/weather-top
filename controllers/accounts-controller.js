@@ -49,4 +49,19 @@ export const accountsController = {
     const userEmail = request.cookies.station;
     return await userStore.getUserByEmail(userEmail);
   },
+  
+  async update(request, response) {
+    const stationId = request.params.stationid;
+    const userId = request.params.userid;
+    const updatedUser = {
+      firstName: request.body.firstName,
+      lastName: request.body.lastName,
+      email: request.body.email,
+      password: request.body.password,
+    };
+    console.log(`Updating User ${userId} from Station ${stationId}`);
+    const user = await userStore.getUserById(userId);
+    await userStore.updateUser(request, updatedUser);
+    response.redirect("/station/" + stationId);
+  },
 };

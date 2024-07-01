@@ -1,4 +1,4 @@
-{{> welcome-menu }}
+{{> menu }}
 
 <section class=" columns  mt-6 pt-6">
 
@@ -12,15 +12,16 @@
           </header>
           <div class="card-image">
             <figure class="image is-64x64 m-auto">
-              <img id="cityfocus-1-image" >
+              <img src="https://i.ibb.co/JKm3cnP/placeholder.png" alt="placeholder" border="0">
             </figure>
           </div>
           <div class="columns">
             <div class="column is-12">
               <article class="card-content">
                 <p class="content is-size-6 has-text-white">
-                   Lat: {{station.latitude}} <br>
-                   Long: {{station.longitude}}
+                
+                   Lat: {{station.latitude}} °<br>
+                   Long: {{station.longitude}} °
                 </p>
               </article>
             </div>
@@ -37,20 +38,24 @@
               Weather
             </p>
           </header>
+      
           <div class="card-image">
-            <figure class="image is-64x64 m-auto">
-              <img id="cityfocus-1-image" >
+            <figure class="image is-64x64 m-auto ">
+              <img src="{{iconCodeReport}}">
+                  
             </figure>
+           
           </div>
           <div class="columns">
             <div class="column is-12">
               <article class="card-content">
                 <p class="content is-size-6 has-text-white">
-                  <br>
-                   Rain
+                <br>
+                  {{weatherTypeReport}}
                 </p>
               </article>
             </div>
+            
           
           </div>
         </section>
@@ -65,7 +70,7 @@
           </header>
           <div class="card-image">
             <figure class="image is-64x64 m-auto">
-              <img id="cityfocus-1-image" >
+              <img src="https://i.ibb.co/ZgMm51B/high-temperature.png" alt="high-temperature" border="0">
             </figure>
           </div>
           <div class="columns">
@@ -96,7 +101,7 @@
           </header>
           <div class="card-image">
             <figure class="image is-64x64 m-auto">
-              <img id="cityfocus-1-image" >
+              <img src="https://i.ibb.co/vDs4ftw/wind.png" alt="wind" border="0">
             </figure>
           </div>
           <div class="columns">
@@ -122,7 +127,7 @@
           </header>
           <div class="card-image">
             <figure class="image is-64x64 m-auto">
-              <img id="cityfocus-1-image" >
+              <img src="https://i.ibb.co/8DqT60g/gauge.png" alt="gauge" border="0">
             </figure>
           </div>
           <div class="columns">

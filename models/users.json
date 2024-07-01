@@ -1,1 +1,68 @@
-{"file":"./models/users.json","users":[]}
+{
+  "file": "./models/users.json",
+  "users": [
+    {
+      "firstName": "Andy",
+      "lastName": "Amatucci",
+      "email": "marisa.amatucci46@gmail.com",
+      "password": "Yoestoy76",
+      "_id": "82f0f2f4-f4ad-4d96-a01b-1f500b83f4cc"
+    },
+    {
+      "firstName": "Andy",
+      "lastName": "Amatucci",
+      "email": "marisasrecipes76@gmail.com",
+      "password": "Yoestoy76",
+      "_id": "078095e9-91ec-4cbf-9542-a917b80f8fad"
+    },
+    {
+      "firstName": "Andy",
+      "lastName": "Amatucci",
+      "email": "latindjangohotel@gmail.com",
+      "password": "Yoestoy76",
+      "_id": "145b9317-28d3-45fb-bae4-f319a7f02ca0"
+    },
+    {
+      "firstName": "Andy",
+      "lastName": "Amatucci",
+      "email": "andrea.nardinocchi76@gmail.com",
+      "password": "Yoestoy76",
+      "_id": "cb8a156b-819c-4d43-bb3e-74f72bddcff4"
+    },
+    {
+      "firstName": "Andy",
+      "lastName": "Amatucci",
+      "email": "andrea.nardinocchi76@gmail.com",
+      "password": "Yoestoy76",
+      "_id": "e489575d-f21a-49d5-b9f2-5fcde8e554e8"
+    },
+    {
+      "firstName": "Marisa",
+      "lastName": "Amatucci",
+      "email": "oviajantepelomundo76@gmail.com",
+      "password": "Yoestoy76",
+      "_id": "42911dfa-7192-4c98-9748-052bfc8722d9"
+    },
+    {
+      "firstName": "Marisa",
+      "lastName": "Amatucci",
+      "email": "marisa.amatucci46@gmail.com",
+      "password": "Yoestoy76",
+      "_id": "2ab80a8b-f489-42b2-966c-576644df4dbb"
+    },
+    {
+      "firstName": "Marisa",
+      "lastName": "Mara",
+      "email": "latam@gmail.com",
+      "password": "Yoestoy76",
+      "_id": "0209f71f-1ba1-4561-ba39-51c24a606910"
+    },
+    {
+      "firstName": "Andy",
+      "lastName": "Nard",
+      "email": "andrea.nardi@gmail.com",
+      "password": "Yoestoy76",
+      "_id": "4e435420-7ec6-46a1-a519-b9efb57a54c9"
+    }
+  ]
+}

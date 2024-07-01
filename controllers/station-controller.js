@@ -1,6 +1,8 @@
 import { stationAnalytics } from "../utils/station-analytics.js";
 import { reportStore } from "../models/report-store.js";
 import { weatherStation } from "../models/station-store.js";
+import dayjs from "dayjs";
+
 
 export const stationController = {
   async index(request, response) {
@@ -12,6 +14,9 @@ export const stationController = {
     const minWindSpeedReport= stationAnalytics.getMinWindSpeedReport(station);
     const maxPressureReport = stationAnalytics.getMaxPressureReport(station);
     const minPressureReport = stationAnalytics.getMinPressureReport(station);
+    const iconCodeReport = stationAnalytics.getIconCodeReport(station);
+    const weatherTypeReport = stationAnalytics.getWeatherTypeReport(station);
+    
     
     const viewData = {
       title: "Station",
@@ -23,6 +28,8 @@ export const stationController = {
       minWindSpeedReport: minWindSpeedReport,
       maxPressureReport: maxPressureReport,  
       minPressureReport: minPressureReport,
+      iconCodeReport: iconCodeReport,
+      weatherTypeReport: weatherTypeReport,
     };
     response.render("station-view", viewData);
   },
@@ -30,12 +37,14 @@ export const stationController = {
   async addReport(request, response) {
     const station = await weatherStation.getStationById(request.params.id);
     const newReport = {
+      //currentHour: request.body.currentHour,
       code: Number(request.body.code),
       temperature: Number(request.body.temperature),
       windSpeed: Number(request.body.windSpeed),
       windDirection: request.body.windDirection,
       windSpeed: Number(request.body.windSpeed),
       pressure: Number(request.body.pressure),
+      currentHour: dayjs().format("YYYY-MM-DD HH:mm:ss") // Adding curren time
     };
     console.log(`adding report ${newReport.code}`);
     await reportStore.addReport(station._id, newReport);

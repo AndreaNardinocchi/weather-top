@@ -27,5 +27,7 @@ router.post("/register", accountsController.register);
 router.post("/authenticate", accountsController.authenticate);
 router.get("/station/:stationid/editreport/:reportid", reportController.index);
 router.post("/station/:stationid/updatereport/:reportid", reportController.update);
+router.get("/station/:stationid/edituser/:userid", accountsController.index);
+router.post("/station/:stationid/updateuser/:userid", accountsController.update);
 
 
