@@ -26,7 +26,7 @@ export const accountsController = {
     };
     response.render("signup-view", viewData);
   },
-  
+
   account(request, response) {
     const viewData = {
       title: "Account",
@@ -47,6 +47,20 @@ export const accountsController = {
     response.redirect("/");
   },
 
+  async addUser(request, response) {
+    const loggedInUser = await accountsController.getLoggedInUser(request);
+    const newUser = {
+      firstName: request.body.firstName,
+      lastName: request.body.lastName,
+      email: request.body.email,
+      password: request.body.password,
+      userid: loggedInUser._id,
+    };
+    console.log(`adding user ${newUser.firstName}`);
+    await userStore.addUser(newUser);
+    response.redirect("/account");
+  },
+
   async authenticate(request, response) {
     const user = await userStore.getUserByEmail(request.body.email);
     if (user) {
@@ -62,11 +76,9 @@ export const accountsController = {
     const userEmail = request.cookies.station;
     return await userStore.getUserByEmail(userEmail);
   },
-  
- 
-  
+
   async update(request, response) {
-    const stationId = request.params.stationid;
+    //  const stationId = request.params.stationid;
     const userId = request.params.userid;
     const updatedUser = {
       firstName: request.body.firstName,
@@ -74,9 +86,9 @@ export const accountsController = {
       email: request.body.email,
       password: request.body.password,
     };
-    console.log(`Updating User ${userId} from Station ${stationId}`);
+    console.log(`Updating User ${userId} from User ${userId}`);
     const user = await userStore.getUserById(userId);
     await userStore.updateUser(request, updatedUser);
-    response.redirect("/station/" + stationId);
+    response.redirect("/user/" + userId);
   },
 };

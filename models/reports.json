@@ -21,22 +21,14 @@
       "stationid": "5226f2da-44b3-4390-8285-a69e31781875"
     },
     {
-      "code": 300,
-      "temperature": 67,
-      "windSpeed": 78,
-      "windDirection": "West-southwest (WSW)",
-      "pressure": 23,
-      "_id": "2f576998-7ff3-4429-9360-020953d58985",
+      "code": 900,
+      "temperature": 0,
+      "windSpeed": 0,
+      "windDirection": "",
+      "pressure": 0,
+      "currentHour": "2024-07-02 18:28:25",
+      "_id": "a6a2d6c8-4467-4b46-84d1-bf41ec245594",
       "stationid": "c077436c-1602-468c-907d-56503bd07230"
-    },
-    {
-      "code": 100,
-      "temperature": 45,
-      "windSpeed": 900,
-      "windDirection": "East-southeast (ESE)",
-      "pressure": 56,
-      "_id": "6ada089d-a544-473f-ac2c-2cd038adcd13",
-      "stationid": "f70df5ed-49ea-409c-ad4b-76172098dbe7"
     },
     {
       "code": 300,
@@ -44,9 +36,9 @@
       "windSpeed": 0,
       "windDirection": "",
       "pressure": 0,
-      "currentHour": "2024-07-01 21:31:55",
-      "_id": "81d61e73-6c85-4ed4-b8c2-a45059ab8efd",
-      "stationid": "9665572b-40ed-4147-a748-6905f846ae07"
+      "currentHour": "2024-07-02 21:03:59",
+      "_id": "84e8d61d-0f77-4b9c-9b50-391652452cd6",
+      "stationid": "74c47377-263d-40f5-8d6c-88cc998cc2f2"
     }
   ]
 }

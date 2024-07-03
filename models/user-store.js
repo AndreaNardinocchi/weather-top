@@ -19,7 +19,15 @@ export const userStore = {
 
   async getUserById(id) {
     await db.read();
-    return db.data.users.find((user) => user._id === id);
+   
+    const list = db.data.users.find((user) => user._id === id);
+    list.users = await userStore.getUsersByUserId(list._id);
+    return list;
+  },
+  
+   async getStationsByUserId(id) {
+    await db.read();
+    return db.data.stations.filter((station) => station.userid === id);
   },
 
   async getUserByEmail(email) {
