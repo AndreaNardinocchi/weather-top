@@ -33,10 +33,12 @@ router.post("/authenticate", accountsController.authenticate);
 router.get("/station/:stationid/editreport/:reportid", reportController.index);
 router.post("/station/:stationid/updatereport/:reportid", reportController.update);
 
+router.get("/account/:userid/edituser/:userid", accountsController.account);
+router.post("/account/:userid/updateuser/:userid", accountsController.update);
 
-//router.get("/user/edituser/:userid", accountsController.account);
-router.post("/user/:userid/updateuser/:userid", accountsController.update);
-router.post("/register", accountsController.account);
+// router.get("/account/edituser/:userid", accountsController.account);
+// router.post("/user/:userid/updateuser/:userid", accountsController.update);
+//router.post("/register", accountsController.account);
 // router.get("/station/:stationid/edituser/:userid", accountsController.index);
 // router.post("/station/:stationid/updateuser/:userid", accountsController.update);
 //router.post("/account/adduser", accountsController.addUser);

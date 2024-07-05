@@ -10,7 +10,9 @@
     </tr>
   </thead>
   <tbody>
-   {{#each users}}
+   
+
+
     <tr>
       <td>
         {{firstName}}  
@@ -25,17 +27,17 @@
         {{password}} 
       </td>
       <td>
-        <a href="/user/{{../user._id}}/edituser/{{_id}}" class="button">
+        <a href="/account/{{../user._id}}/edituser/{{_id}}" class="button">
           {{>icons/edit}}
         </a>
       </td>
       <td>
-        <a href="/user/{{../user._id}}/deleteuser/{{_id}}" class="button">
+        <a href="/account/{{../user._id}}/deleteuser/{{_id}}" class="button">
           {{>icons/delete}}
         </a>
       </td>
     </tr>
-     {{/each}}
+    
   </tbody>
 </table>
 

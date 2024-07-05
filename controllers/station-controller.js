@@ -1,6 +1,8 @@
 import { stationAnalytics } from "../utils/station-analytics.js";
 import { reportStore } from "../models/report-store.js";
 import { weatherStation } from "../models/station-store.js";
+import { userAnalytics } from "../utils/user-analytics.js";
+import { userStore } from "../models/user-store.js";
 import dayjs from "dayjs";
 
 
@@ -33,6 +35,25 @@ export const stationController = {
     };
     response.render("station-view", viewData);
   },
+  
+    async account(request, response) {
+    const user = await userStore.getUserById(request.params.id);
+    const firstName = userAnalytics.getFirstName(user);
+    const secondName = userAnalytics.getSecondName(user);
+    const email = userAnalytics.getEmail(user);
+    const password = userAnalytics.getPassword(user);
+    
+    
+    const viewData = {
+      title: "Account",
+      firstName: firstName,
+      secondName: secondName,
+      email: email,
+      password: password,
+    };
+    response.render("account-view", viewData);
+  },
+  
   
   async addReport(request, response) {
     const station = await weatherStation.getStationById(request.params.id);

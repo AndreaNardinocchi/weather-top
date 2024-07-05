@@ -25,6 +25,11 @@ export const userStore = {
     return list;
   },
   
+  //  async getUserById(id) {
+  //   await db.read();
+  //   return db.data.users.find((user) => user._id === id);
+  // },
+  
    async getStationsByUserId(id) {
     await db.read();
     return db.data.stations.filter((station) => station.userid === id);
@@ -53,5 +58,8 @@ export const userStore = {
     user.email = updatedUser.email;
     user.password = updatedUser.password;
     await db.write();
+     
+
+   
   },
 };
