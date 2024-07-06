@@ -17,13 +17,13 @@ export const userStore = {
     return user;
   },
 
-  async getUserById(id) {
-    await db.read();
+//   async getUserById(id) {
+//     await db.read();
    
-    const list = db.data.users.find((user) => user._id === id);
-    list.users = await userStore.getUsersByUserId(list._id);
-    return list;
-  },
+//     const list = db.data.users.find((user) => user._id === id);
+//     list.users = await userStore.getUsersByUserId(list._id);
+//     return list;
+//   },
   
   //  async getUserById(id) {
   //   await db.read();
@@ -51,15 +51,20 @@ export const userStore = {
     db.data.users = [];
     await db.write();
   },
+  
+    async getUserById(id) {
+    await db.read();
+    return db.data.users.find((user) => user._id === id);
+  },
 
-   async updateUser(user, updatedUser) {
+   async updateUser(userId, updatedUser) {
+    const user = await this.getUserById(userId);
     user.firstName = updatedUser.firstName;
     user.lastName = updatedUser.lastName;
     user.email = updatedUser.email;
     user.password = updatedUser.password;
     await db.write();
      
-
    
   },
 };

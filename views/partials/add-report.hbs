@@ -2,7 +2,6 @@
   <label>Enter Station Details:</label>
   <div class="field is-horizontal">
     <div class="field-body">
-      
       <div class="field">
         <input class="input" type="text" placeholder="Enter Code" name="code">
       </div>
@@ -14,26 +13,21 @@
       </div>
     </div>
   </div>
-   
-    <div class="field is-horizontal">
-
-      <input class ="input mr-3" type="text" name="windDirection" placeholder = "Enter or select the wind direction" list="windDirection" value="{{report.windDirection}}">
+  <div class="field is-horizontal">
+    <input class ="input mr-3" type="text" name="windDirection" placeholder = "Enter or select the wind direction" list="windDirection" value="{{report.windDirection}}">
     <datalist id="windDirection">
       <option value="West-northwest (WNW)" >West-northwest (WNW)</option>
-    <option value="North-northwest (NNW)">North-northwest (NNW)</option>
-    <option value="North-northeast (NNE)" >North-northeast (NNE)</option>
-    <option value="East-northeast (ENE)">East-northeast (ENE)</option>
-    <option value="East-southeast (ESE)" >East-southeast (ESE)</option>
-    <option value="South-southeast (SSE)">South-southeast (SSE)</option>
-    <option value="South-southwest (SSW)" >South-southwest (SSW)</option>
-    <option value="West-southwest (WSW)">West-southwest (WSW)</option>
+      <option value="North-northwest (NNW)">North-northwest (NNW)</option>
+      <option value="North-northeast (NNE)" >North-northeast (NNE)</option>
+      <option value="East-northeast (ENE)">East-northeast (ENE)</option>
+      <option value="East-southeast (ESE)" >East-southeast (ESE)</option>
+      <option value="South-southeast (SSE)">South-southeast (SSE)</option>
+      <option value="South-southwest (SSW)" >South-southwest (SSW)</option>
+      <option value="West-southwest (WSW)">West-southwest (WSW)</option>
     </datalist>
-
-     
-      <div class="field">
-        <input class="input" type="text" placeholder="Enter Pressure" name="pressure">
-      </div>
+    <div class="field">
+      <input class="input" type="text" placeholder="Enter Pressure" name="pressure">
     </div>
-  
+  </div>
   <button class="button is-primary">Submit Report</button>
 </form>

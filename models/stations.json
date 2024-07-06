@@ -81,6 +81,27 @@
       "longitude": "",
       "userid": "677ae6bc-8aff-4b28-9ba1-8cd83b914973",
       "_id": "5f09d39c-0bd6-42cf-87dd-3322f58282d6"
+    },
+    {
+      "title": "London",
+      "latitude": "120",
+      "longitude": "78",
+      "userid": "cb8a156b-819c-4d43-bb3e-74f72bddcff4",
+      "_id": "5c7a2b39-1bab-444d-a788-38b7599c92e7"
+    },
+    {
+      "title": "Cork",
+      "latitude": "200",
+      "longitude": "300",
+      "userid": "0ef07f27-49fe-4b2f-a2a4-35898ea9efc7",
+      "_id": "e0bd26b2-7911-43c8-a86e-5427f9350e89"
+    },
+    {
+      "title": "Palermo",
+      "latitude": "23",
+      "longitude": "200",
+      "userid": "145b9317-28d3-45fb-bae4-f319a7f02ca0",
+      "_id": "630ecd43-d3b6-4b48-98e8-fb48681968a2"
     }
   ]
 }

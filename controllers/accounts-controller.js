@@ -160,7 +160,7 @@ So can then use things like: {{firstName}} in your handlebars partial.
       password: request.body.password,
     };
     console.log(`Updating User ${userId}`);
-    const user = await userStore.getUserById(userId);
+    const user = await this.getUserById(userId);
     await userStore.updateUser(user, updatedUser);
     response.redirect("/account/" + userId);
   },

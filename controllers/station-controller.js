@@ -5,7 +5,6 @@ import { userAnalytics } from "../utils/user-analytics.js";
 import { userStore } from "../models/user-store.js";
 import dayjs from "dayjs";
 
-
 export const stationController = {
   async index(request, response) {
     const station = await weatherStation.getStationById(request.params.id);
@@ -18,7 +17,6 @@ export const stationController = {
     const minPressureReport = stationAnalytics.getMinPressureReport(station);
     const iconCodeReport = stationAnalytics.getIconCodeReport(station);
     const weatherTypeReport = stationAnalytics.getWeatherTypeReport(station);
-    
     
     const viewData = {
       title: "Station",
@@ -42,7 +40,6 @@ export const stationController = {
     const secondName = userAnalytics.getSecondName(user);
     const email = userAnalytics.getEmail(user);
     const password = userAnalytics.getPassword(user);
-    
     
     const viewData = {
       title: "Account",

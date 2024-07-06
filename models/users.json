@@ -315,6 +315,20 @@
       "email": "jeff@gmail.com",
       "password": "Yoestoy76",
       "_id": "0ef07f27-49fe-4b2f-a2a4-35898ea9efc7"
+    },
+    {
+      "firstName": "mara",
+      "lastName": "mara",
+      "email": "andrea.nardinocchi76@gmail.com",
+      "password": "Yoestoy76",
+      "_id": "a78d86d9-cc74-430e-91df-bc3dfeb83f0c"
+    },
+    {
+      "firstName": "Andrea",
+      "lastName": "Nardinocchi",
+      "email": "andrea.nardinocchi76@gmail.com",
+      "password": "Yoestoy76",
+      "_id": "7c7c8e06-9693-4e88-9a26-ca00b9f8cd56"
     }
   ]
 }
