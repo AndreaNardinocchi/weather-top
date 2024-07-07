@@ -1,21 +1,21 @@
-<section class = "column is-6 mt-6 pt-6">
-  <form class="box" action="/station/{{station._id}}/updateuser/{{user._id}}" method="POST">
+<section class = "column is-12  pt-2">
+  <form class="box" action="/account/updateuser/" method="POST">
     <label class="label">Name</label>
     <div class="field is-horizontal">
       <div class="field-body">
         <div class="field">
-          <input class="input" type="text" placeholder="Enter first name" name="firstName" value="{{station.firstName}}"/>
+          <input class="input" type="text" placeholder="Enter first name" name="firstName" value="{{firstName}}"/>
         </div>
         <div class="field">
-          <input class="input" type="text" placeholder="Enter last name" name="lastName" value="{{station.lastName}}/>
+          <input class="input" type="text" placeholder="Enter last name" name="lastName" value="{{lastName}}"/>
         </div>
       </div>
     </div>
     <div class="field">
-      <label class="label">Email</label> <input class="input" type="text" placeholder="Enter email" name="email" value="{{station.email}}/>
+      <input class="input" type="text" placeholder="Enter email" name="email" value="{{email}}"/>
     </div>
     <div class="field">
-      <label class="label">Password</label> <input class="input" type="password" placeholder="Enter Password" name="password" value="{{station.password}}/>
+      <input class="input" type="password" placeholder="Enter Password" name="password" value="{{password}}"/>
     </div>
     <div class="field is-grouped">
       <button class="button is-link">Update User</button>

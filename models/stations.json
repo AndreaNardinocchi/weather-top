@@ -2,106 +2,29 @@
   "file": "./models/stations.json",
   "stations": [
     {
-      "title": "tramore",
-      "_id": "84657646-bd8f-4893-8788-3b002421a5f3"
+      "title": "Milan",
+      "latitude": "23",
+      "longitude": "230",
+      "_id": "4fed813d-b77c-4c87-8311-5bb7967cfb6f"
+    },
+    {
+      "title": "Tralee",
+      "latitude": "123",
+      "longitude": "160",
+      "userid": "1b520665-ab86-4472-a595-d27f9883f131",
+      "_id": "7799c2de-9d07-4c9e-97be-202a6c56d9b8"
+    },
+    {
+      "title": "Edinburgh",
+      "latitude": "03",
+      "longitude": "12",
+      "_id": "254499be-878a-4b13-b882-ecdd0b85fafa"
     },
     {
       "title": "Naples",
-      "latitude": "120",
-      "longitude": "130",
-      "userid": "145b9317-28d3-45fb-bae4-f319a7f02ca0",
-      "_id": "5226f2da-44b3-4390-8285-a69e31781875"
-    },
-    {
-      "title": "Madrid",
-      "latitude": "78",
-      "longitude": "200",
-      "userid": "cb8a156b-819c-4d43-bb3e-74f72bddcff4",
-      "_id": "9665572b-40ed-4147-a748-6905f846ae07"
-    },
-    {
-      "title": "Milan",
-      "latitude": "239",
-      "longitude": "100",
-      "userid": "82f0f2f4-f4ad-4d96-a01b-1f500b83f4cc",
-      "_id": "c5773dbb-8860-4660-890b-80a75b56749b"
-    },
-    {
-      "title": "mana",
-      "latitude": "129",
-      "longitude": "120",
-      "userid": "0209f71f-1ba1-4561-ba39-51c24a606910",
-      "_id": "c077436c-1602-468c-907d-56503bd07230"
-    },
-    {
-      "title": "Valencia",
-      "latitude": "78",
-      "longitude": "234",
-      "userid": "4e435420-7ec6-46a1-a519-b9efb57a54c9",
-      "_id": "f70df5ed-49ea-409c-ad4b-76172098dbe7"
-    },
-    {
-      "title": "Funchal",
-      "latitude": "34",
-      "longitude": "300",
-      "userid": "278fc333-8af1-42b3-a3a7-ef7086aabee5",
-      "_id": "d5f5b2d5-3757-4497-9715-d7b77077938c"
-    },
-    {
-      "title": "bara",
       "latitude": "123",
-      "longitude": "456",
-      "userid": "dfdaf2b3-da35-498d-8ca7-da85ae38cb75",
-      "_id": "f0914399-2ead-41bd-aac3-704d59ffe368"
-    },
-    {
-      "title": "mara",
-      "latitude": "",
-      "longitude": "",
-      "userid": "cb2b47c1-5305-4f3c-8cc8-771810c9123b",
-      "_id": "407f1713-dee6-4a11-b3cc-0442f86e9e62"
-    },
-    {
-      "title": "mara",
-      "latitude": "",
-      "longitude": "",
-      "userid": "bd330985-9b67-4665-93c1-987e3846ee29",
-      "_id": "b42e4681-2a29-43e0-88d7-dd3f365c729e"
-    },
-    {
-      "title": "Faro",
-      "latitude": "23",
-      "longitude": "123",
-      "userid": "42911dfa-7192-4c98-9748-052bfc8722d9",
-      "_id": "a23a3bae-66b3-47b0-b410-7958fe6042a5"
-    },
-    {
-      "title": "sd",
-      "latitude": "",
-      "longitude": "",
-      "userid": "677ae6bc-8aff-4b28-9ba1-8cd83b914973",
-      "_id": "5f09d39c-0bd6-42cf-87dd-3322f58282d6"
-    },
-    {
-      "title": "London",
-      "latitude": "120",
-      "longitude": "78",
-      "userid": "cb8a156b-819c-4d43-bb3e-74f72bddcff4",
-      "_id": "5c7a2b39-1bab-444d-a788-38b7599c92e7"
-    },
-    {
-      "title": "Cork",
-      "latitude": "200",
-      "longitude": "300",
-      "userid": "0ef07f27-49fe-4b2f-a2a4-35898ea9efc7",
-      "_id": "e0bd26b2-7911-43c8-a86e-5427f9350e89"
-    },
-    {
-      "title": "Palermo",
-      "latitude": "23",
-      "longitude": "200",
-      "userid": "145b9317-28d3-45fb-bae4-f319a7f02ca0",
-      "_id": "630ecd43-d3b6-4b48-98e8-fb48681968a2"
+      "longitude": "120",
+      "_id": "36297898-7040-486d-965d-525e637f2de4"
     }
   ]
 }

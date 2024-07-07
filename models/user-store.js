@@ -17,19 +17,6 @@ export const userStore = {
     return user;
   },
 
-//   async getUserById(id) {
-//     await db.read();
-   
-//     const list = db.data.users.find((user) => user._id === id);
-//     list.users = await userStore.getUsersByUserId(list._id);
-//     return list;
-//   },
-  
-  //  async getUserById(id) {
-  //   await db.read();
-  //   return db.data.users.find((user) => user._id === id);
-  // },
-  
    async getStationsByUserId(id) {
     await db.read();
     return db.data.stations.filter((station) => station.userid === id);
@@ -38,6 +25,11 @@ export const userStore = {
   async getUserByEmail(email) {
     await db.read();
     return db.data.users.find((user) => user.email === email);
+  },
+  
+    async getUserById(id) {
+    await db.read();
+    return db.data.users.find((user) => user._id === id);
   },
 
   async deleteUserById(id) {
@@ -52,19 +44,14 @@ export const userStore = {
     await db.write();
   },
   
-    async getUserById(id) {
-    await db.read();
-    return db.data.users.find((user) => user._id === id);
-  },
-
-   async updateUser(userId, updatedUser) {
-    const user = await this.getUserById(userId);
+  // async updateUser(userId, updatedUser) {
+    async updateUser(user, updatedUser) {
+   // const user = await this.getUserById(userId);
+    user._id = updatedUser._id;
     user.firstName = updatedUser.firstName;
     user.lastName = updatedUser.lastName;
     user.email = updatedUser.email;
     user.password = updatedUser.password;
-    await db.write();
-     
-   
+    await db.write(); 
   },
 };
