@@ -2,8 +2,8 @@
   "file": "./models/users.json",
   "users": [
     {
-      "firstName": "Andy",
-      "lastName": "Amatu",
+      "firstName": "Andrea",
+      "lastName": "Ama",
       "email": "marisa.amatucci@gmail.com",
       "password": "estamos76"
     },

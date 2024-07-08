@@ -1,37 +1,34 @@
 import { accountsController } from "./accounts-controller.js";
+import { stationController } from "./station-controller.js";
 import { weatherStation } from "../models/station-store.js";
+import { dashboardAnalytics } from "../utils/dashboard-analytics.js";
+import { reportStore } from "../models/report-store.js";
+
+
+import dayjs from "dayjs";
+import { stationAnalytics } from "../utils/station-analytics.js";
 
 export const dashboardController = {
- /* async index(request, response) {
-    const viewData = {
-      title: "Forecast Stations Dashboard",
-      stations: await weatherStation.getAllStations(),
-    };
-    console.log("dashboard rendering");
-    response.render("dashboard-view", viewData);
-  }, */
   
   async index(request, response) {
     const loggedInUser = await accountsController.getLoggedInUser(request);
+
+   
+    
     const viewData = {
       title: "Forecast Stations Dashboard",
       stations: await weatherStation.getStationsByUserId(loggedInUser._id),
+
+    
+    
     };
     console.log("dashboard rendering");
     response.render("dashboard-view", viewData);
   },
   
- /* async addStation(request, response) {
-    const newWeatherStation = {
-      title: request.body.title,
-    };
-    console.log(`adding station ${newWeatherStation.title}`);
-    await weatherStation.addStation(newWeatherStation);
-    response.redirect("/dashboard");
-  },
- */
   async addStation(request, response) {
     const loggedInUser = await accountsController.getLoggedInUser(request);
+    const station = await weatherStation.getStationsByUserId(loggedInUser._id);
     const newStation = {
       title: request.body.title,
       latitude: request.body.latitude,
@@ -49,5 +46,6 @@ export const dashboardController = {
     await weatherStation.deleteStationById(stationId);
     response.redirect("/dashboard");
   },
+
 };
 

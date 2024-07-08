@@ -29,7 +29,6 @@ export const accountsController = {
   },
 
   account(request, response) {
-  
     const viewData = {
       title: "Account",
     };
@@ -50,7 +49,7 @@ export const accountsController = {
     const lastName = user.lastName;
     const email = user.email;
     const password = user.password;
-    const _id = user._id;
+   // const _id = user._id;
       
       const viewData = {
         title: "Account",
@@ -58,7 +57,7 @@ export const accountsController = {
         lastName: lastName,
         email: email,
         password: password,
-        _id: user._id,
+     //   _id: user._id,
       };
       response.render("account-view", viewData);
     },
@@ -72,14 +71,14 @@ export const accountsController = {
    const lastName = request.body.lastName;
    const email = request.body.email;
    const password = request.body.password;
-   const _id = request.body.userId;
+ //  const _id = request.body.userId;
    
     const updatedUser = {
         firstName: firstName,
         lastName: lastName,
         email: email,
         password: password,
-        _id: userId,
+   //     _id: userId,
      };
     
     
@@ -103,10 +102,6 @@ export const accountsController = {
 
   async getLoggedInUser(request) {
     const userEmail = request.cookies.station;
-   
     return await userStore.getUserByEmail(userEmail);
-  
-    
-  },  
-  
+  },    
 };
