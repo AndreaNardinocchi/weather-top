@@ -25,6 +25,24 @@
       "latitude": "123",
       "longitude": "120",
       "_id": "36297898-7040-486d-965d-525e637f2de4"
+    },
+    {
+      "title": "Parma",
+      "latitude": "23",
+      "longitude": "240",
+      "_id": "bf4004e6-4685-4b51-b481-71edfc3562dc"
+    },
+    {
+      "title": "Aran",
+      "latitude": "23",
+      "longitude": "234",
+      "_id": "643dfeb4-bb2c-4adf-b6a9-2a802096d7c1"
+    },
+    {
+      "title": "Zadar",
+      "latitude": "45",
+      "longitude": "-7",
+      "_id": "ede0ef8f-d852-49e1-b04a-1faf8bdd55ae"
     }
   ]
 }

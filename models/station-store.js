@@ -42,8 +42,8 @@ export const weatherStation = {
     await db.write();
   },
   
-   async getStationsByUserId(userid) {
-    await db.read();
-    return db.data.stations.filter((station) => station.userid === userid);
-  },
+  //  async getStationsByUserId(userid) {
+  //   await db.read();
+  //   return db.data.stations.filter((station) => station.userid === userid);
+  // },
 };

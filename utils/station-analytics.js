@@ -96,7 +96,7 @@ export const stationAnalytics = {
    let iconCodeReport = station.reports[0];
 
 
-for (let i = 0; i < 1; i++) {
+for (let i = 0; i <1; i++) {
       
   
     if ((iconCodeReport.code  >= 200) && (iconCodeReport.code  <= 232)) {
@@ -126,10 +126,8 @@ for (let i = 0; i < 1; i++) {
    }
     }
         return iconCodeReport;
-  
-
- return null;
   }
+    return null;
 },
 
 
@@ -181,9 +179,7 @@ for (let i = 0; i < 1; i++) {
     }
      return weatherTypeReport;
   }
-
  return null;
   },
-
 
 };

@@ -12,7 +12,7 @@ export const dashboardAnalytics = {
     return fastestWindReport;
   },
 
-  getMaxTempReport(station) {
+  getMaxTemp(station) {
     let maxTempReport = null;
     if (station.reports.length > 0) {
       maxTempReport = station.reports[0];
@@ -22,10 +22,10 @@ export const dashboardAnalytics = {
         }
       }
     }
-    return maxTempReport;
+    return maxTempReport.temperature;
   },
 
-  getMinTempReport(station) {
+  getMinTemp(station) {
     let minTempReport = null;
     if (station.reports.length > 0) {
       minTempReport = station.reports[0];
@@ -35,10 +35,10 @@ export const dashboardAnalytics = {
         }
       }
     }
-    return minTempReport;
+    return minTempReport.temperature;
   },
 
-  getMaxWindSpeedReport(station) {
+  getMaxWindSpeed(station) {
     let maxWindSpeedReport = null;
     if (station.reports.length > 0) {
       maxWindSpeedReport = station.reports[0];
@@ -48,10 +48,10 @@ export const dashboardAnalytics = {
         }
       }
     }
-    return maxWindSpeedReport;
+    return maxWindSpeedReport.windSpeed;
   },
 
-  getMinWindSpeedReport(station) {
+  getMinWindSpeed(station) {
     let minWindSpeedReport = null;
     if (station.reports.length > 0) {
       minWindSpeedReport = station.reports[0];
@@ -61,10 +61,10 @@ export const dashboardAnalytics = {
         }
       }
     }
-    return minWindSpeedReport;
+    return minWindSpeedReport.windSpeed;
   },
 
-  getMaxPressureReport(station) {
+  getMaxPressure(station) {
     let maxPressureReport = null;
     if (station.reports.length > 0) {
       maxPressureReport = station.reports[0];
@@ -74,10 +74,10 @@ export const dashboardAnalytics = {
         }
       }
     }
-    return maxPressureReport;
+    return maxPressureReport.pressure;
   },
 
-  getMinPressureReport(station) {
+  getMinPressure(station) {
     let minPressureReport = null;
     if (station.reports.length > 0) {
       minPressureReport = station.reports[0];
@@ -87,10 +87,10 @@ export const dashboardAnalytics = {
         }
       }
     }
-    return minPressureReport;
+    return minPressureReport.pressure;
   },
 
-  getIconCodeReport(station) {
+  getIconCode(station) {
       if (station.reports.length > 0) {
     // Icons changing based upon the weather code          
    let iconCodeReport = station.reports[0];
@@ -125,15 +125,15 @@ for (let i = 0; i < 1; i++) {
     iconCodeReport = "https://openweathermap.org/img/wn/01d@2x.png";
    }
     }
-        return iconCodeReport;
-  
+        return iconCodeReport.code;
 
- return null;
+
   }
+     return null;
 },
 
 
-  getWeatherTypeReport(station) {
+  getWeatherType(station) {
   
   
   if (station.reports.length > 0) {
@@ -179,11 +179,10 @@ for (let i = 0; i < 1; i++) {
     weatherTypeReport = "Clear";
    }
     }
-     return weatherTypeReport;
+     return weatherTypeReport.code;
   }
 
  return null;
   },
-
-
+  
 };

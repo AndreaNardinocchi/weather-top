@@ -29,10 +29,12 @@ export const stationController = {
       minPressureReport: minPressureReport,
       iconCodeReport: iconCodeReport,
       weatherTypeReport: weatherTypeReport,
+    
     };
     response.render("station-view", viewData);
   },
   
+
   async addReport(request, response) {
     const station = await weatherStation.getStationById(request.params.id);
     const newReport = {
@@ -48,6 +50,25 @@ export const stationController = {
     await reportStore.addReport(station._id, newReport);
     response.redirect("/station/" + station._id);
   },
+  
+  
+   async update(request, response) {
+    const stationId = request.params.stationid;
+    const reportId = request.params.reportid;
+    const updatedReport = {
+      code: Number(request.body.code),
+      temperature: Number(request.body.temperature),
+      windSpeed: Number(request.body.windSpeed),
+      windDirection: request.body.windDirection,
+      windSpeed: Number(request.body.windSpeed),
+      pressure: Number(request.body.pressure),
+    };
+    console.log(`Updating Report ${reportId} from Station ${stationId}`);
+    const report = await reportStore.getReportById(reportId);
+    await reportStore.updateReport(report, updatedReport);
+    response.redirect("/station/" + stationId);
+  },
+  
   
    async deleteReport(request, response) {
     const stationId = request.params.stationid;

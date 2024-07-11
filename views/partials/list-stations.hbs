@@ -1,5 +1,6 @@
-{{#each stations}}
 
+{{#each stations}}
+<div class="box box-link-hover-shadow">
 <section class=" columns pt-2">
   <section class="column ">
     <section class="card has-background-black">
@@ -25,6 +26,7 @@
       </div>
     </section>
   </section>
+  
 
   <section class="column ">
     <section class="card has-background-black">
@@ -43,7 +45,7 @@
           <article class="card-content">
             <p class="content is-size-6 has-text-white">
               <br>
-              {{weatherTypeReport}} 
+             {{weatherType}} 
             </p>
           </article>
         </div>
@@ -66,8 +68,8 @@
         <div class="column is-12">
           <article class="card-content">
             <p class="temperature content is-size-6 has-text-white">
-              Max:  {{maxTempReport.temperature}} °C<br>
-              Min:  {{minTempReport.temperature}} °C
+              Max: {{maxTemp.temperature}} °C<br>
+              Min:  {{minTemp.temperature}} °C
             </p>
           </article>
         </div>
@@ -90,8 +92,8 @@
         <div class="column is-12">
           <article class="card-content">
             <p class="content is-size-6 has-text-white">
-              Max speed: {{maxWindSpeedReport.windSpeed}} kMh<br>
-              Min speed: {{minWindSpeedReport.windSpeed}} kMh
+              Max speed: {{maxWindSpeed.windSpeed}} kMh<br>
+              Min speed: {{minWindSpeed.windSpeed}} kMh
             </p>
           </article>
         </div>
@@ -114,24 +116,19 @@
         <div class="column is-12">
           <article class="card-content">
             <p class="content is-size-6 has-text-white">
-              Max: {{maxPressureReport.pressure}} hPa<br>
-              Min: {{minPressureReport.pressure}} hPa
+              Max: {{maxPressure.pressure}} hPa<br>
+              Min: {{minPressure.pressure}} hPa
             </p>
           </article>
         </div>
       </div>
     </section>
   </section>
+  
   </section>
  
-<div class="box box-link-hover-shadow">
-  <h2 class="title">
-    {{title}} 
-  </h2>
-  <h3 class="subtitle pt-4">
-   Lat: {{latitude}} <br>
-   Long: {{longitude}}
-  </h3>
+
+ 
   <a href="/station/{{_id}}" class="button">
     {{>icons/open}}
   </a>
@@ -141,4 +138,6 @@
   </a>
 </div>
 {{/each}}
+
+
 

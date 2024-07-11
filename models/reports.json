@@ -100,6 +100,36 @@
       "currentHour": "2024-07-07 10:48:05",
       "_id": "ff7a3087-f47c-414a-a845-109af85fd692",
       "stationid": "254499be-878a-4b13-b882-ecdd0b85fafa"
+    },
+    {
+      "code": 200,
+      "temperature": 3,
+      "windSpeed": 56,
+      "windDirection": "South-southeast (SSE)",
+      "pressure": 10,
+      "currentHour": "2024-07-08 14:23:39",
+      "_id": "7ad71675-a8b6-4d0e-a786-974c6821bb02",
+      "stationid": "bf4004e6-4685-4b51-b481-71edfc3562dc"
+    },
+    {
+      "code": 731,
+      "temperature": 34,
+      "windSpeed": 1200,
+      "windDirection": "South-southwest (SSW)",
+      "pressure": 23,
+      "currentHour": "2024-07-10 20:57:07",
+      "_id": "f8821cba-708e-41cd-976e-a0fd0fee51a5",
+      "stationid": "643dfeb4-bb2c-4adf-b6a9-2a802096d7c1"
+    },
+    {
+      "code": 730,
+      "temperature": 34,
+      "windSpeed": 34,
+      "windDirection": "West-northwest (WNW)",
+      "pressure": 23,
+      "currentHour": "2024-07-11 10:36:46",
+      "_id": "94ce4ff2-b013-40a0-97db-15018b85bfd6",
+      "stationid": "ede0ef8f-d852-49e1-b04a-1faf8bdd55ae"
     }
   ]
 }
