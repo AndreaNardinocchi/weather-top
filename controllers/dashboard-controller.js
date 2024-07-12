@@ -13,11 +13,14 @@ import dayjs from "dayjs";
 export const dashboardController = {
   
   async index(request, response) {
-  //  const station = await weatherStation.getStationById(request.params.id);
+   // const station = await weatherStation.getStationById(request.params.id);
     const loggedInUser = await accountsController.getLoggedInUser(request);
     const stations = await weatherStation.getStationsByUserId(loggedInUser._id);
     const sortedStations = weatherstationAnalytics.getSortedStations(stations);
+    // const station = await weatherStation.getStationsByUserId(loggedInUser._id);
     
+    
+   
     // const maxTempReport = stationAnalytics.getMaxTempReport(station);
     // const minTempReport = stationAnalytics.getMinTempReport(station);
     // const maxWindSpeedReport = stationAnalytics.getMaxWindSpeedReport(station);
@@ -79,6 +82,8 @@ export const dashboardController = {
     await weatherStation.addStation(newStation);
     response.redirect("/dashboard");
   },
+
+  
   
   
   async deleteStation(request, response) {
@@ -89,4 +94,5 @@ export const dashboardController = {
   },
 
 };
+
 

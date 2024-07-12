@@ -41,6 +41,25 @@ export const weatherStation = {
     db.data.stations = [];
     await db.write();
   },
+
+  async updateStationDetails(station, newStation) {
+    station.title = station.title;
+    station._id = station._id;
+    station.userid = station.userid;
+    station.latitude = station.latitude;
+    station.longitude = station.longitude;
+    station.maxTemp = newStation.maxTemp;
+    station.minTemp = newStation.minTemp;
+    station.maxPressure = newStation.maxPressure;
+    station.minPressure = newStation.minPressure;
+    station.maxWindSpeed = newStation.maxWindSpeed;
+    station.minWindSpeed = newStation.minWindSpeed;
+    station.weatherType = newStation.weatherType;
+   // station.a = newStation.a;
+    station.iconCode = newStation.iconCode;
+    //station.minCode = newStation.minCode;
+    await db.write();
+  }
   
   //  async getStationsByUserId(userid) {
   //   await db.read();

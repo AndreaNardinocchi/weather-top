@@ -4,14 +4,14 @@ import { userStore } from "../models/user-store.js";
 export const accountsController = {
   index(request, response) {
     const viewData = {
-      title: "Login or Signup",
+      title: "Login or Signup | Weather Top App",
     };
     response.render("index", viewData);
   },
 
   login(request, response) {
     const viewData = {
-      title: "Login to the Service",
+      title: "Login to the Service | Weather Top App",
     };
     response.render("login-view", viewData);
   },
@@ -23,14 +23,14 @@ export const accountsController = {
 
   signup(request, response) {
     const viewData = {
-      title: "Sign up to the Service",
+      title: "Sign up to the Service | Weather Top App",
     };
     response.render("signup-view", viewData);
   },
 
   account(request, response) {
     const viewData = {
-      title: "Account",
+      title: "Your Account details | Weather Top App",
     };
     response.render("account-view", viewData);
   },

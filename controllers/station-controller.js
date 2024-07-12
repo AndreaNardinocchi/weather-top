@@ -2,11 +2,14 @@ import { stationAnalytics } from "../utils/station-analytics.js";
 import { reportStore } from "../models/report-store.js";
 import { weatherStation } from "../models/station-store.js";
 import { userStore } from "../models/user-store.js";
+import { weatherstationAnalytics } from "../utils/weatherstation-analytics.js";
 import dayjs from "dayjs";
 
 export const stationController = {
   async index(request, response) {
+   // const stations = await weatherStation.getStationsByUserId(loggedInUser._id);
     const station = await weatherStation.getStationById(request.params.id);
+    weatherstationAnalytics.getStationData(station);
     const fastestWindReport = stationAnalytics.getFastestWindReport(station);
     const maxTempReport = stationAnalytics.getMaxTempReport(station);
     const minTempReport = stationAnalytics.getMinTempReport(station);
@@ -15,7 +18,10 @@ export const stationController = {
     const maxPressureReport = stationAnalytics.getMaxPressureReport(station);
     const minPressureReport = stationAnalytics.getMinPressureReport(station);
     const iconCodeReport = stationAnalytics.getIconCodeReport(station);
+    console.log(iconCodeReport);
     const weatherTypeReport = stationAnalytics.getWeatherTypeReport(station);
+    //const maxDate = stationAnalytics.getLatestReport(stations);
+   // console.log(maxDate);
     
     const viewData = {
       title: "Station",

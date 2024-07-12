@@ -3,7 +3,7 @@
   "users": [
     {
       "firstName": "Andrea",
-      "lastName": "Ama",
+      "lastName": "Am",
       "email": "marisa.amatucci@gmail.com",
       "password": "estamos76"
     },
@@ -18,6 +18,13 @@
       "lastName": "Bim",
       "email": "nardinocchi76@gmail.com",
       "password": "estamos76"
+    },
+    {
+      "firstName": "Andy",
+      "lastName": "Gian",
+      "email": "oviajantepelomundo76@gmail.com",
+      "password": "estamos76",
+      "_id": "e4b9871c-ec6c-4c17-b98c-f3ee4cf77010"
     }
   ]
 }
