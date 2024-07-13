@@ -1,6 +1,19 @@
-{{> menu }}
+{{> menu active="station" }}
+<section class="pt-6">
+</section>
+<section class=" section box  mt-6 pt-4 pb-4 pl-3 has-text-centered">
+<p class=" title">
+          {{station.title}}
+        </p>
+</section>
+<section class="box mt-3">
 {{> liststationsdata}}
-<section class="section">
+</section>
+<section class="box section">
   {{> list-reports}}
   {{> add-report}}
+  <form class="box"  >
+
+  <button class="button is-danger ">Auto Generating Reading</button>
+</form>
 </section>

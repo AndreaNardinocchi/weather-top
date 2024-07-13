@@ -21,6 +21,7 @@
               Lat: {{latitude}} °<br>
               Long: {{longitude}} °
             </p>
+            <p> </p>
           </article>
         </div>
       </div>
@@ -48,6 +49,8 @@
               <br>
             {{weatherType}}
             </p>
+            <p>
+            </p>
           </article>
         </div>
       </div>
@@ -68,7 +71,9 @@
       <div class="columns">
         <div class="column is-12">
           <article class="card-content">
-            <p class="temperature content is-size-6 has-text-white">
+            <p class="temperature content is-size-7 has-text-white">
+              Cur:  {{temperature}} °C<br>
+              CurF: {{tempFar}} °F<br>
               Max:  {{maxTemp}} °C<br>
               Min:  {{minTemp}} °C
             </p>
@@ -92,9 +97,11 @@
       <div class="columns">
         <div class="column is-12">
           <article class="card-content">
-            <p class="content is-size-6 has-text-white">
-              Max speed: {{maxWindSpeed}} kMh<br>
-              Min speed: {{minWindSpeed}} kMh
+            <p class="content is-size-7 has-text-white">
+              Cur: {{wind}} kMh<br>
+              Dir: {{windDirect}}<br>
+              Max: {{maxWindSpeed}} kMh<br>
+              Min: {{minWindSpeed}} kMh
             </p>
           </article>
         </div>
@@ -116,7 +123,9 @@
       <div class="columns">
         <div class="column is-12">
           <article class="card-content">
-            <p class="content is-size-6 has-text-white">
+            <p class="content is-size-7 has-text-white">
+              <br>
+              Cur: {{pressure}} hPa<br>
               Max: {{maxPressure}} hPa<br>
               Min: {{minPressure}} hPa
             </p>

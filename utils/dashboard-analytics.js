@@ -5,7 +5,7 @@ export const dashboardAnalytics = {
     let fastestWindReport = null;
     if (station.reports.length > 0) {
       fastestWindReport = station.reports[0];
-      for (let i = 1; i < station.reports.length; i++) {
+      for (let i = 0; i < station.reports.length; i++) {
         if (station.reports[i].windSpeed > fastestWindReport.windSpeed) {
           fastestWindReport = station.reports[i];
         }
@@ -18,7 +18,7 @@ export const dashboardAnalytics = {
     let maxTempReport = null;
     if (station.reports.length > 0) {
       maxTempReport = station.reports[0];
-      for (let i = 1; i < station.reports.length; i++) {
+      for (let i = 0; i < station.reports.length; i++) {
         if (station.reports[i].temperature > maxTempReport.temperature) {
           maxTempReport = station.reports[i];
         }
@@ -31,7 +31,7 @@ export const dashboardAnalytics = {
     let minTempReport = null;
     if (station.reports.length > 0) {
       minTempReport = station.reports[0];
-      for (let i = 1; i < station.reports.length; i++) {
+      for (let i = 0; i < station.reports.length; i++) {
         if (station.reports[i].temperature < minTempReport.temperature) {
           minTempReport = station.reports[i];
         }
@@ -44,7 +44,7 @@ export const dashboardAnalytics = {
     let maxWindSpeedReport = null;
     if (station.reports.length > 0) {
       maxWindSpeedReport = station.reports[0];
-      for (let i = 1; i < station.reports.length; i++) {
+      for (let i = 0; i < station.reports.length; i++) {
         if (station.reports[i].windSpeed > maxWindSpeedReport.windSpeed) {
           maxWindSpeedReport = station.reports[i];
         }
@@ -57,7 +57,7 @@ export const dashboardAnalytics = {
     let minWindSpeedReport = null;
     if (station.reports.length > 0) {
       minWindSpeedReport = station.reports[0];
-      for (let i = 1; i < station.reports.length; i++) {
+      for (let i = 0; i < station.reports.length; i++) {
         if (station.reports[i].windSpeed < minWindSpeedReport.windSpeed) {
           minWindSpeedReport = station.reports[i];
         }
@@ -70,7 +70,7 @@ export const dashboardAnalytics = {
     let maxPressureReport = null;
     if (station.reports.length > 0) {
       maxPressureReport = station.reports[0];
-      for (let i = 1; i < station.reports.length; i++) {
+      for (let i = 0; i < station.reports.length; i++) {
         if (station.reports[i].pressure > maxPressureReport.pressure) {
           maxPressureReport = station.reports[i];
         }
@@ -83,7 +83,7 @@ export const dashboardAnalytics = {
     let minPressureReport = null;
     if (station.reports.length > 0) {
       minPressureReport = station.reports[0];
-      for (let i = 1; i < station.reports.length; i++) {
+      for (let i = 0; i < station.reports.length; i++) {
         if (station.reports[i].pressure < minPressureReport.pressure) {
           minPressureReport = station.reports[i];
         }
@@ -92,18 +92,7 @@ export const dashboardAnalytics = {
     return minPressureReport.pressure;
   },
 
-  // getMinCode(station) {
-  //   let minCode = null;
-  //   if (station.reports.length > 0) {
-  //     minCode = station.reports[0];
-  //     for (let i = 1; i < station.reports.length; i++) {
-  //       if (station.reports[i].code < minCode.code) {
-  //         minCode = station.reports[i];
-  //       }
-  //     }
-  //   }
-  //   return minCode.code;
-  // },
+
 
   getIconCode(station) {
   
@@ -213,44 +202,108 @@ export const dashboardAnalytics = {
 
   },
   
+   getWindDirect(station) {
+    let windDirectionReport = null;
+    windDirectionReport = station.reports[station.reports.length];
+    if (station.reports.length > 0) {
+       for (let i = 0; i < station.reports.length; i++) {
+         if(station.reports[i].windDirection==="West-northwest (WNW)") {
+      windDirectionReport= "West-northwest (WNW)";
+       }
+         if(station.reports[i].windDirection==="North-northeast (NNE)") {
+      windDirectionReport= "North-northeast (NNE)";
+       }
+         if(station.reports[i].windDirection==="East-northeast (ENE)") {
+      windDirectionReport= "East-northeast (ENE)";
+       }
+         if(station.reports[i].windDirection==="East-southeast (ESE)") {
+      windDirectionReport= "East-southeast (ESE)";
+       }
+          if(station.reports[i].windDirection==="South-southeast (SSE)") {
+      windDirectionReport= "South-southeast (SSE)";
+       }
+         if(station.reports[i].windDirection==="South-southwest (SSW)") {
+      windDirectionReport= "South-southwest (SSW)";
+       }
+            if(station.reports[i].windDirection==="West-southwest (WSW)") {
+      windDirectionReport= "West-southwest (WSW)";
+       }
+    
+       }
+    }
+    return windDirectionReport;
+  },
+  
+     getTemperature(station) {
+    let temperatureReport = null;
+    temperatureReport = station.reports[station.reports.length-1];
+    if (station.reports.length > 0) {
+       for (let i = 0; i < station.reports.length; i++) {
+         if((station.reports[i].temperature>=-40) && (station.reports[i].temperature<=55)) {
+            temperatureReport = station.reports[i].temperature;
+         } else {
+           temperatureReport = "##"
+           
+         }
+    
+         }
+    }
+    return temperatureReport;
+  },
+  
+  getTempFar(station) {
+    let tempFarReport = null;
+    tempFarReport = station.reports[station.reports.length-1];
+    if (station.reports.length > 0) {
+       for (let i = 0; i < station.reports.length; i++) {
+         if((station.reports[i].temperature>=-200) && (station.reports[i].temperature<200)) {
+            tempFarReport = (station.reports[i].temperature * 1.8) + 32;
+         } else {
+           tempFarReport = "##"
+           
+         }
+    
+         }
+    }
+    return tempFarReport;
+  },
+  
+ 
+  
+       getWind(station) {
+    let windReport = null;
+    windReport = station.reports[station.reports.length-1];
+    if (station.reports.length > 0) {
+       for (let i = 0; i < station.reports.length; i++) {
+         if((station.reports[i].windSpeed>=0) && (station.reports[i].temperature<=2000)) {
+            windReport = station.reports[i].windSpeed;
+         } else {
+           windReport = "##"
+           
+         }
+    
+         }
+    }
+    return windReport;
+  },
+  
+      getPressure(station) {
+    let pressureReport = null;
+    pressureReport = station.reports[station.reports.length-1];
+    if (station.reports.length > 0) {
+       for (let i = 0; i < station.reports.length; i++) {
+         if((station.reports[i].pressure>=0) && (station.reports[i].pressure<=2000)) {
+            pressureReport = station.reports[i].pressure;
+         } else {
+           pressureReport = "##"
+           
+         }
+    
+         }
+    }
+    return pressureReport;
+  },
+  
 };
 
 
-// if ((weatherTypeReport.code  >= 200) && (weatherTypeReport.code  <= 232)) {
-//   weatherTypeReport = "Thunderstorm";
-// } else if ((weatherTypeReport.code  >= 300) && (weatherTypeReport.code  <= 321)) {
-// weatherTypeReport = "Drizzle";
-// } else if ((weatherTypeReport.code  >= 500) && (weatherTypeReport.code  <= 531)) {
-// weatherTypeReport = "Rain";
-// } else if ((weatherTypeReport.code  >= 600) && (weatherTypeReport.code  <= 622)) {
-// weatherTypeReport = "Snow";
-// } else if (weatherTypeReport.code  === 701) {
-// weatherTypeReport = "Mist";
-// } else if (weatherTypeReport.code  === 711) {
-// weatherTypeReport = "Smoke";
-// } else if (weatherTypeReport.code  === 721) {
-// weatherTypeReport = "Haze";
-// } else if (weatherTypeReport.code  === 731) {
-//   weatherTypeReport = "Dust";
-// }  else if (weatherTypeReport.code  === 741) {
-//   weatherTypeReport = "Fog";
-// } else if (weatherTypeReport.code  === 751) {
-//     weatherTypeReport = "Sand";
-// } else if (weatherTypeReport.code  === 761) {
-// weatherTypeReport = "Dust";
-// } else if (weatherTypeReport.code  === 762) {
-// weatherTypeReport = "Ash";
-// } else if (weatherTypeReport.code  === 771) {
-// weatherTypeReport = "Squall";
-// } else if (weatherTypeReport.code  === 781) {
-// weatherTypeReport = "Tornado";
-// } else if (weatherTypeReport.code  === 800) {
-// weatherTypeReport = "Clear";
-// } else if ((weatherTypeReport.code  >= 801) && (weatherTypeReport.code  <= 804))  {
-// weatherTypeReport = "Clouds";
-// } else {
-// weatherTypeReport = "Clear";
-// }
-// }
-//  return weatherTypeReport.code;
-// }

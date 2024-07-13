@@ -1,9 +1,11 @@
+import dayjs from "dayjs";
+
 export const stationAnalytics = {
   getFastestWindReport(station) {
     let fastestWindReport = null;
     if (station.reports.length > 0) {
       fastestWindReport = station.reports[0];
-      for (let i = 1; i < station.reports.length; i++) {
+      for (let i = 0; i < station.reports.length; i++) {
         if (station.reports[i].windSpeed > fastestWindReport.windSpeed) {
           fastestWindReport = station.reports[i];
         }
@@ -16,7 +18,7 @@ export const stationAnalytics = {
     let maxTempReport = null;
     if (station.reports.length > 0) {
       maxTempReport = station.reports[0];
-      for (let i = 1; i < station.reports.length; i++) {
+      for (let i = 0; i < station.reports.length; i++) {
         if (station.reports[i].temperature > maxTempReport.temperature) {
           maxTempReport = station.reports[i];
         }
@@ -29,7 +31,7 @@ export const stationAnalytics = {
     let minTempReport = null;
     if (station.reports.length > 0) {
       minTempReport = station.reports[0];
-      for (let i = 1; i < station.reports.length; i++) {
+      for (let i = 0; i < station.reports.length; i++) {
         if (station.reports[i].temperature < minTempReport.temperature) {
           minTempReport = station.reports[i];
         }
@@ -42,7 +44,7 @@ export const stationAnalytics = {
     let maxWindSpeedReport = null;
     if (station.reports.length > 0) {
       maxWindSpeedReport = station.reports[0];
-      for (let i = 1; i < station.reports.length; i++) {
+      for (let i = 0; i < station.reports.length; i++) {
         if (station.reports[i].windSpeed > maxWindSpeedReport.windSpeed) {
           maxWindSpeedReport = station.reports[i];
         }
@@ -55,7 +57,7 @@ export const stationAnalytics = {
     let minWindSpeedReport = null;
     if (station.reports.length > 0) {
       minWindSpeedReport = station.reports[0];
-      for (let i = 1; i < station.reports.length; i++) {
+      for (let i = 0; i < station.reports.length; i++) {
         if (station.reports[i].windSpeed < minWindSpeedReport.windSpeed) {
           minWindSpeedReport = station.reports[i];
         }
@@ -68,7 +70,7 @@ export const stationAnalytics = {
     let maxPressureReport = null;
     if (station.reports.length > 0) {
       maxPressureReport = station.reports[0];
-      for (let i = 1; i < station.reports.length; i++) {
+      for (let i = 0; i < station.reports.length; i++) {
         if (station.reports[i].pressure > maxPressureReport.pressure) {
           maxPressureReport = station.reports[i];
         }
@@ -81,7 +83,7 @@ export const stationAnalytics = {
     let minPressureReport = null;
     if (station.reports.length > 0) {
       minPressureReport = station.reports[0];
-      for (let i = 1; i < station.reports.length; i++) {
+      for (let i = 0; i < station.reports.length; i++) {
         if (station.reports[i].pressure < minPressureReport.pressure) {
           minPressureReport = station.reports[i];
         }
@@ -89,11 +91,117 @@ export const stationAnalytics = {
     }
     return minPressureReport;
   },
+  
+   getWindDirectionReport(station) {
+    let windDirectionReport = null;
+    windDirectionReport = station.reports[station.reports.length-1];
+    if (station.reports.length > 0) {
+       for (let i = 0; i < station.reports.length; i++) {
+         if(station.reports[i].windDirection==="West-northwest (WNW)") {
+      windDirectionReport= "West-northwest (WNW)";
+       }
+         if(station.reports[i].windDirection==="North-northeast (NNE)") {
+      windDirectionReport= "North-northeast (NNE)";
+       }
+         if(station.reports[i].windDirection==="East-northeast (ENE)") {
+      windDirectionReport= "East-northeast (ENE)";
+       }
+         if(station.reports[i].windDirection==="East-southeast (ESE)") {
+      windDirectionReport= "East-southeast (ESE)";
+       }
+          if(station.reports[i].windDirection==="South-southeast (SSE)") {
+      windDirectionReport= "South-southeast (SSE)";
+       }
+         if(station.reports[i].windDirection==="South-southwest (SSW)") {
+      windDirectionReport= "South-southwest (SSW)";
+       }
+            if(station.reports[i].windDirection==="West-southwest (WSW)") {
+      windDirectionReport= "West-southwest (WSW)";
+       }
+    
+       }
+    }
+    return windDirectionReport;
+  },
+  
+     getTemperatureReport(station) {
+    let temperatureReport = null;
+    temperatureReport = station.reports[station.reports.length-1];
+    if (station.reports.length > 0) {
+       for (let i = 0; i < station.reports.length; i++) {
+         if((station.reports[i].temperature>=-40) && (station.reports[i].temperature<=55)) {
+            temperatureReport = station.reports[i].temperature;
+         } else {
+           temperatureReport = "##"
+           
+         }
+    
+         }
+    }
+    return temperatureReport;
+  },
+  
+  getTempFarReport(station) {
+    let tempFarReport = null;
+    tempFarReport = station.reports[station.reports.length-1];
+    if (station.reports.length > 0) {
+       for (let i = 0; i < station.reports.length; i++) {
+         if((station.reports[i].temperature>=-200) && (station.reports[i].temperature<200)) {
+            tempFarReport = (station.reports[i].temperature * 1.8) + 32;
+         } else {
+           tempFarReport = "##"
+           
+         }
+    
+         }
+    }
+    return tempFarReport;
+  },
+  
+ 
+  
+       getWindReport(station) {
+    let windReport = null;
+    windReport = station.reports[station.reports.length-1];
+    if (station.reports.length > 0) {
+       for (let i = 0; i < station.reports.length; i++) {
+         if((station.reports[i].windSpeed>=0) && (station.reports[i].temperature<=2000)) {
+            windReport = station.reports[i].windSpeed;
+         } else {
+           windReport = "##"
+           
+         }
+    
+         }
+    }
+    return windReport;
+  },
+  
+      getPressureReport(station) {
+    let pressureReport = null;
+    pressureReport = station.reports[station.reports.length-1];
+    if (station.reports.length > 0) {
+       for (let i = 0; i < station.reports.length; i++) {
+         if((station.reports[i].pressure>=0) && (station.reports[i].pressure<=2000)) {
+            pressureReport = station.reports[i].pressure;
+         } else {
+           pressureReport = "##"
+           
+         }
+    
+         }
+    }
+    return pressureReport;
+  },
+  
 
-  getIconCodeReport(station) {
+  
+    getIconCodeReport(station) {
       if (station.reports.length > 0) {
     // Icons changing based upon the weather code          
-   let iconCodeReport = station.reports[0];
+   //let iconCodeReport = station.reports[0];
+        // https://www.freecodecamp.org/news/how-to-get-the-last-item-in-an-array-in-javascript/
+        let iconCodeReport= station.reports[station.reports.length-1];
 
 
 for (let i = 0; i <1; i++) {
@@ -126,9 +234,12 @@ for (let i = 0; i <1; i++) {
    }
     }
         return iconCodeReport;
+        console.log(iconCodeReport);
   }
     return null;
 },
+
+  
 
 
   getWeatherTypeReport(station) {
@@ -137,7 +248,9 @@ for (let i = 0; i <1; i++) {
   if (station.reports.length > 0) {
     // Icons changing based upon the weather code
   let weatherTypeReport = null;
-  weatherTypeReport  = station.reports[0];
+  //  https://www.freecodecamp.org/news/how-to-get-the-last-item-in-an-array-in-javascript/
+  weatherTypeReport  = station.reports[station.reports.length-1];
+   
     
     for (let i = 0; i < 1; i++) {
   

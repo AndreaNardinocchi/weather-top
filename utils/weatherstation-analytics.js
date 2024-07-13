@@ -2,6 +2,8 @@ import { dashboardAnalytics } from "./dashboard-analytics.js";
 import { weatherStation } from "../models/station-store.js";
 import { reportStore } from "../models/report-store.js";
 import { stationAnalytics } from "./station-analytics.js";
+//import { stationController } from "./station-controller.js";
+import dayjs from "dayjs";
 
 export const weatherstationAnalytics = {
   // https://www.youtube.com/watch?v=CTHhlx25X-U
@@ -9,6 +11,20 @@ export const weatherstationAnalytics = {
     let sortedStations = stations.sort((a, b) => a.title.localeCompare(b.title));
     console.log(stations);
     return sortedStations;
+ },
+  
+  getLatestReport(stations) {
+  
+   let currentHours = stations.currentHour;
+   
+   const maxDates = currentHours.map((currentHour) => dayjs(currentHour))
+   
+   const maxDate = maxDates.reduce((accumulator, curVal) =>
+     curVal && accumulator.isBefore(curVal) ? accumulator : curVal,
+   )
+ 
+   console.log(maxDate) // "2020-01-02"
+   return maxDate;
  },
   
 //   // https://stackoverflow.com/questions/6439915/how-to-set-a-javascript-object-values-dynamically/6439954#6439954
@@ -191,18 +207,7 @@ export const weatherstationAnalytics = {
 // Andrea Nardinocchi
 //   4:51 P
 
-getLatestReport(stations) {
-   let currentHours = stations.currentHour;
-   
-   const maxDates = currentHours.map((currentHour) => dayjs(currentHour))
-   
-   const maxDate = maxDates.reduce((accumulator, curVal) =>
-     curVal && accumulator.isBefore(curVal) ? accumulator : curVal,
-   )
- 
-   console.log(maxDate) // "2020-01-02"
-   return maxDate;
- },
+
  
 //   async getIconCode(station) {
 //    //const reports = await reportStore.getReportsByStationId(station._id);
@@ -223,10 +228,15 @@ getLatestReport(stations) {
   async getStationData(station) {
    const reports = await reportStore.getReportsByStationId(station._id);
    if (reports.length > 0) {
+      const temperature = dashboardAnalytics.getTemperature(station);
+      const tempFar = dashboardAnalytics.getTempFar(station);
       const maxTemp = dashboardAnalytics.getMaxTemp(station);
       const minTemp = dashboardAnalytics.getMinTemp(station);
+      const wind = dashboardAnalytics.getWind(station);
+      const windDirect = dashboardAnalytics.getWindDirect(station);
       const maxWindSpeed = dashboardAnalytics.getMaxWindSpeed(station);
       const minWindSpeed = dashboardAnalytics.getMinWindSpeed(station);
+      const pressure = dashboardAnalytics.getPressure(station);
       const maxPressure = dashboardAnalytics.getMaxPressure(station);
       const minPressure = dashboardAnalytics.getMinPressure(station);
       const iconCode = dashboardAnalytics.getIconCode(station);
@@ -234,16 +244,21 @@ getLatestReport(stations) {
     //  const a = dashboardAnalytics.getWeatherType(station);
       const weatherType = dashboardAnalytics.getWeatherType(station);
       const newStation = {};
+      newStation['temperature'] = temperature;
+      newStation['tempFar'] = tempFar;
       newStation['maxTemp'] = maxTemp;
       newStation['minTemp'] = minTemp;
+      newStation['wind'] = wind;
+      newStation['windDirect'] = windDirect;
       newStation['maxWindSpeed'] = maxWindSpeed;
       newStation['minWindSpeed'] = minWindSpeed;
+      newStation['pressure'] = pressure;
       newStation['maxPressure'] = maxPressure;
       newStation['minPressure'] = minPressure;
       newStation['iconCode'] = iconCode;
       newStation['weatherType'] = weatherType;
-     // newStation['a'] = a;
-    //  newStation['minCode'] = minCode;
+      // newStation['a'] = a;
+      // newStation['minCode'] = minCode;
       console.log(newStation + iconCode);
       console.log("Updating station data for " + station.title);
       weatherStation.updateStationDetails(station, newStation);

@@ -1,11 +1,14 @@
 
 
-<section class=" columns  mt-6 pt-6">
+{{#with station }}
+
+  <section class=" columns  pt-4 pb-4">
+     
   <section class="column ">
     <section class="card has-background-black">
       <header class="card-header">
         <p class="card-header-title is-size-4  has-text-white title">
-          {{station.title}}
+          {{title}}
         </p>
       </header>
       <div class="card-image">
@@ -17,14 +20,18 @@
         <div class="column is-12">
           <article class="card-content">
             <p class="content is-size-6 has-text-white">
-              Lat: {{station.latitude}} °<br>
-              Long: {{station.longitude}} °
+              Lat: {{latitude}} °<br>
+              Long: {{longitude}} °
             </p>
+            <p></p>
+            
           </article>
         </div>
       </div>
     </section>
   </section>
+  {{/with }}
+
   <section class="column ">
     <section class="card has-background-black">
       <header class="card-header">
@@ -36,14 +43,17 @@
         <figure class="image is-64x64 m-auto ">
           <img src="{{iconCodeReport}}">
         </figure>
+
       </div>
       <div class="columns">
         <div class="column is-12">
           <article class="card-content">
             <p class="content is-size-6 has-text-white">
               <br>
-              {{weatherTypeReport}}
+            {{weatherTypeReport}}
             </p>
+            
+            <p></p>
           </article>
         </div>
       </div>
@@ -64,7 +74,9 @@
       <div class="columns">
         <div class="column is-12">
           <article class="card-content">
-            <p class="temperature content is-size-6 has-text-white">
+            <p class="temperature content is-size-7 has-text-white">
+              Cur:  {{temperatureReport}} °C<br>
+              CurF: {{tempFarReport}} °F<br>
               Max:  {{maxTempReport.temperature}} °C<br>
               Min:  {{minTempReport.temperature}} °C
             </p>
@@ -88,9 +100,11 @@
       <div class="columns">
         <div class="column is-12">
           <article class="card-content">
-            <p class="content is-size-6 has-text-white">
-              Max speed: {{maxWindSpeedReport.windSpeed}} kMh<br>
-              Min speed: {{minWindSpeedReport.windSpeed}} kMh
+            <p class="content is-size-7 has-text-white">
+              Cur: {{windReport}} kMh<br>
+              Dir: {{windDirection}}<br>
+              Max: {{maxWindSpeedReport.windSpeed}} kMh<br>
+              Min: {{minWindSpeedReport.windSpeed}} kMh
             </p>
           </article>
         </div>
@@ -112,10 +126,13 @@
       <div class="columns">
         <div class="column is-12">
           <article class="card-content">
-            <p class="content is-size-6 has-text-white">
+            <p class="content is-size-7 has-text-white">
+              <br>
+              Cur: {{pressureReport}} hPa<br>
               Max: {{maxPressureReport.pressure}} hPa<br>
               Min: {{minPressureReport.pressure}} hPa
             </p>
+            
           </article>
         </div>
       </div>
