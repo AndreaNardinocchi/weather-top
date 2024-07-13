@@ -5,45 +5,26 @@ import { stationAnalytics } from "../utils/station-analytics.js";
 import { reportStore } from "../models/report-store.js";
 import { weatherstationAnalytics } from "../utils/weatherstation-analytics.js";
 import { dashboardAnalytics } from "../utils/dashboard-analytics.js";
-
+// import axios from "axios";
 
 import dayjs from "dayjs";
+
+// const apiKey = "YOUR API KEY HERE";
+// const weatherRequestUrl = `https://api.openweathermap.org/data/2.5/weather?q=Tramore,Ireland&units=metric&appid=c3e26a0b5387b001f6f548f5710c0baf`;
+
 
 
 export const dashboardController = {
   
   async index(request, response) {
-   // const station = await weatherStation.getStationById(request.params.id);
+ 
     const loggedInUser = await accountsController.getLoggedInUser(request);
     const stations = await weatherStation.getStationsByUserId(loggedInUser._id);
-    const sortedStations = weatherstationAnalytics.getSortedStations(stations);
-    // const station = await weatherStation.getStationsByUserId(loggedInUser._id);
-    
-    
-   
-    // const maxTempReport = stationAnalytics.getMaxTempReport(station);
-    // const minTempReport = stationAnalytics.getMinTempReport(station);
-    // const maxWindSpeedReport = stationAnalytics.getMaxWindSpeedReport(station);
-    // const minWindSpeedReport= stationAnalytics.getMinWindSpeedReport(station);
-    // const maxPressureReport = stationAnalytics.getMaxPressureReport(station);
-    // const minPressureReport = stationAnalytics.getMinPressureReport(station);
-    // const iconCodeReport = stationAnalytics.getIconCodeReport(station);
-    // const weatherTypeReport = stationAnalytics.getWeatherTypeReport(station);
-
+    const sortedStations = weatherstationAnalytics.getSortedStations(stations); 
     
     const viewData = {
       title: "Forecast Stations Dashboard",
       stations: sortedStations,
-      
-      // maxTempReport: maxTempReport,
-      // minTempReport: minTempReport,
-      // maxWindSpeedReport: maxWindSpeedReport,
-      // minWindSpeedReport: minWindSpeedReport,
-      // maxPressureReport: maxPressureReport,  
-      // minPressureReport: minPressureReport,
-      // iconCodeReport: iconCodeReport,
-      // weatherTypeReport: weatherTypeReport,
-     
     };
   
     console.log("dashboard rendering");
@@ -53,6 +34,8 @@ export const dashboardController = {
   
    async addReport(request, response) {
     const station = await weatherStation.getStationById(request.params.id);
+     
+ 
     const newReport = {
       code: Number(request.body.code),
       temperature: Number(request.body.temperature),
@@ -60,7 +43,10 @@ export const dashboardController = {
       windDirection: request.body.windDirection,
       windSpeed: Number(request.body.windSpeed),
       pressure: Number(request.body.pressure),
-      currentHour: dayjs().format("YYYY-MM-DD HH:mm:ss") // Adding current time
+      currentHour: dayjs().format("YYYY-MM-DD HH:mm:ss")// Adding current time
+      
+   
+   
     };
     console.log(`adding report ${newReport.code}`);
     await reportStore.addReport(station._id, newReport);

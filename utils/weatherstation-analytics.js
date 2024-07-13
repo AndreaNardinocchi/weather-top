@@ -13,19 +13,19 @@ export const weatherstationAnalytics = {
     return sortedStations;
  },
   
-  getLatestReport(stations) {
+//   getLatestReport(stations) {
   
-   let currentHours = stations.currentHour;
+//    let currentHours = stations.currentHour;
    
-   const maxDates = currentHours.map((currentHour) => dayjs(currentHour))
+//    const maxDates = currentHours.map((currentHour) => dayjs(currentHour))
    
-   const maxDate = maxDates.reduce((accumulator, curVal) =>
-     curVal && accumulator.isBefore(curVal) ? accumulator : curVal,
-   )
+//    const maxDate = maxDates.reduce((accumulator, curVal) =>
+//      curVal && accumulator.isBefore(curVal) ? accumulator : curVal,
+//    )
  
-   console.log(maxDate) // "2020-01-02"
-   return maxDate;
- },
+//    console.log(maxDate) // "2020-01-02"
+//    return maxDate;
+//  },
   
 //   // https://stackoverflow.com/questions/6439915/how-to-set-a-javascript-object-values-dynamically/6439954#6439954
 //   getStationData(station) {

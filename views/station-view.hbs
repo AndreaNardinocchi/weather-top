@@ -1,10 +1,12 @@
 {{> menu active="station" }}
 <section class="pt-6">
 </section>
-<section class=" section box  mt-6 pt-4 pb-4 pl-3 has-text-centered">
+<section class="pt-6 has-text-centered">
 <p class=" title">
           {{station.title}}
         </p>
+  
+<hr>
 </section>
 <section class="box mt-3">
 {{> liststationsdata}}
@@ -12,8 +14,35 @@
 <section class="box section">
   {{> list-reports}}
   {{> add-report}}
-  <form class="box"  >
+  <form class="box" action="/station/{{station._id}}/addreport" method="POST"  >
 
   <button class="button is-danger ">Auto Generating Reading</button>
 </form>
+  <script>
+  const data = {
+    labels: [
+      {{#each reports.trendLabels}}
+        "{{this}}",
+      {{/each}}
+    ],
+    datasets: [
+      {
+        name: "Temperature", type: "line",
+        values: [
+          {{#each reports.tempTrend}}
+            {{this}},
+          {{/each}}
+        ]
+      }
+    ]
+  }
+
+  const chart = new frappe.Chart("#chart", {
+    title: "Temperature Trend",
+    data: data,
+    type: 'line',
+    height: 250,
+  })
+</script>
+
 </section>

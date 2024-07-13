@@ -23,21 +23,31 @@
           "currentHour": "2024-07-13 16:47:28",
           "_id": "3d09d36d-bf95-4d8c-a0ef-743ae785a520",
           "stationid": "b57d3316-ceaa-4bfb-9d40-c99322f9c326"
+        },
+        {
+          "code": 303,
+          "temperature": 50,
+          "windSpeed": 566,
+          "windDirection": "East-northeast (ENE)",
+          "pressure": 999,
+          "currentHour": "2024-07-13 22:50:10",
+          "_id": "0675f5bb-d416-446b-9c0e-cbef9684dd4c",
+          "stationid": "b57d3316-ceaa-4bfb-9d40-c99322f9c326"
         }
       ],
-      "maxTemp": 23,
+      "maxTemp": 50,
       "minTemp": 23,
-      "maxPressure": 234,
+      "maxPressure": 999,
       "minPressure": 234,
-      "maxWindSpeed": 20,
+      "maxWindSpeed": 566,
       "minWindSpeed": 20,
-      "weatherType": "Thunderstorm",
-      "iconCode": "https://openweathermap.org/img/wn/11d@2x.png",
-      "temperature": 23,
-      "tempFar": 73.4,
-      "pressure": 234,
-      "wind": 20,
-      "windDirect": "South-southeast (SSE)"
+      "weatherType": "Drizzle",
+      "iconCode": "https://openweathermap.org/img/wn/09d@2x.png",
+      "temperature": 50,
+      "tempFar": 122,
+      "pressure": 999,
+      "wind": 566,
+      "windDirect": "East-northeast (ENE)"
     },
     {
       "title": "New York",
@@ -54,21 +64,30 @@
           "currentHour": "2024-07-13 19:55:29",
           "_id": "4c5146e7-bcab-4b1c-a5e4-bdee1e937eab",
           "stationid": "12fed35b-ff5e-4e13-aa1c-5c4546f66c7d"
+        },
+        {
+          "code": null,
+          "temperature": null,
+          "windSpeed": null,
+          "pressure": null,
+          "currentHour": "2024-07-13 22:49:23",
+          "_id": "b6d54116-eb03-42bb-9ba2-bb6aa835f844",
+          "stationid": "12fed35b-ff5e-4e13-aa1c-5c4546f66c7d"
         }
       ],
       "maxTemp": 53,
-      "minTemp": 53,
+      "minTemp": null,
       "maxPressure": 23,
-      "minPressure": 23,
+      "minPressure": null,
       "maxWindSpeed": 90,
-      "minWindSpeed": 90,
-      "weatherType": "Thunderstorm",
-      "iconCode": "https://openweathermap.org/img/wn/11d@2x.png",
-      "temperature": 53,
-      "tempFar": 127.4,
-      "pressure": 23,
+      "minWindSpeed": null,
+      "weatherType": "Clear",
+      "iconCode": "https://openweathermap.org/img/wn/01d@2x.png",
+      "temperature": null,
+      "tempFar": 32,
+      "pressure": null,
       "windDirect": "South-southwest (SSW)",
-      "wind": 90
+      "wind": null
     },
     {
       "title": "Galway",

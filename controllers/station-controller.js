@@ -1,9 +1,16 @@
+import {dashboardAnalytics} from "../utils/dashboard-analytics.js";
 import { stationAnalytics } from "../utils/station-analytics.js";
 import { reportStore } from "../models/report-store.js";
 import { weatherStation } from "../models/station-store.js";
 import { userStore } from "../models/user-store.js";
 import { weatherstationAnalytics } from "../utils/weatherstation-analytics.js";
 import dayjs from "dayjs";
+import axios from "axios";
+
+const apiKey = "YOUR API KEY HERE";
+const weatherRequestUrl = `https://api.openweathermap.org/data/2.5/weather?q=Tramore,Ireland&units=metric&appid=c3e26a0b5387b001f6f548f5710c0baf`;
+
+
 
 export const stationController = {
   async index(request, response) {
@@ -56,7 +63,32 @@ export const stationController = {
   
 
   async addReport(request, response) {
-    const station = await weatherStation.getStationById(request.params.id);
+   const station = await weatherStation.getStationById(request.params.id);
+    
+//           let report = {};
+//     const lat = await dashboardAnalytics.getLatitude(station) || "52.2502793";
+//     console.log(lat);
+//     const lng = await dashboardAnalytics.getLongitude(station) || "-7.1177689";
+//     console.log(lng);
+//     const latLongRequestUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lng}&units=metric&appid=c3e26a0b5387b001f6f548f5710c0baf`;
+//     const result = await axios.get(latLongRequestUrl);
+//     if (result.status == 200) {
+//       report.tempTrend = [];
+//       report.trendLabels = [];
+//       const trends = result.data.list;
+//       for (let i=0; i<10; i++) {
+//         report.tempTrend.push(trends[i].main.temp);
+//         report.trendLabels.push(trends[i].dt_txt);
+//        }
+//     }
+//     console.log(report);
+//     const viewData = {
+//       title: "Weather Report",
+//       reading: report,
+//     };
+//     response.render("station-view", viewData);
+//   },
+    
     const newReport = {
       code: Number(request.body.code),
       temperature: Number(request.body.temperature),

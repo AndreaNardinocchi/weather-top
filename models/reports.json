@@ -140,6 +140,25 @@
       "currentHour": "2024-07-13 19:55:29",
       "_id": "4c5146e7-bcab-4b1c-a5e4-bdee1e937eab",
       "stationid": "12fed35b-ff5e-4e13-aa1c-5c4546f66c7d"
+    },
+    {
+      "code": null,
+      "temperature": null,
+      "windSpeed": null,
+      "pressure": null,
+      "currentHour": "2024-07-13 22:49:23",
+      "_id": "b6d54116-eb03-42bb-9ba2-bb6aa835f844",
+      "stationid": "12fed35b-ff5e-4e13-aa1c-5c4546f66c7d"
+    },
+    {
+      "code": 303,
+      "temperature": 50,
+      "windSpeed": 566,
+      "windDirection": "East-northeast (ENE)",
+      "pressure": 999,
+      "currentHour": "2024-07-13 22:50:10",
+      "_id": "0675f5bb-d416-446b-9c0e-cbef9684dd4c",
+      "stationid": "b57d3316-ceaa-4bfb-9d40-c99322f9c326"
     }
   ]
 }

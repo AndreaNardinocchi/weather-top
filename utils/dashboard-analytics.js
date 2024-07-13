@@ -304,6 +304,40 @@ export const dashboardAnalytics = {
     return pressureReport;
   },
   
+        getLatitude(station) {
+    let latitude = null;
+    latitude = station.reports[station.reports.length-1];
+    if (station.reports.length > 0) {
+       for (let i = 0; i < station.reports.length; i++) {
+         if((station.reports[i].latitude>=-2000) && (station.reports[i].latitude<=2000)) {
+            latitude = station.reports[i].lattude;
+         } else {
+           latitude = "##"
+           
+         }
+    
+         }
+    }
+    return latitude;
+  },
+  
+          getLongitude(station) {
+    let longitude = null;
+    longitude = station.reports[station.reports.length-1];
+    if (station.reports.length > 0) {
+       for (let i = 0; i < station.reports.length; i++) {
+         if((station.reports[i].longitude>=-2000) && (station.reports[i].longitude<=2000)) {
+            longitude = station.reports[i].lattude;
+         } else {
+           longitude = "##"
+           
+         }
+    
+         }
+    }
+    return longitude;
+  },
+  
 };
 
 
