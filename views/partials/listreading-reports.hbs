@@ -1,0 +1,38 @@
+<table class="table is-fullwidth">
+  <thead>
+    <tr>
+      <th>Date/Time</th>
+      <th>Code</th>
+      <th>Temp</th>
+      <th>Wind speed</th>
+      <th>Wind direction</th>
+      <th>Pressure</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#with station}}
+    <tr>
+      <td>
+        {{currentHour}} 
+      </td>
+      <td>
+        {{code}} 
+      </td>
+      <td>
+        {{temperatureReport}} °C 
+      </td>
+      <td>
+        {{windSpeedReport}} kMh
+      </td>
+      <td>
+        {{windDirection}} 
+      </td>
+      <td>
+        {{pressureReport}} hPa
+      </td>
+    </tr>
+    {{/with}}
+  </tbody>
+</table>

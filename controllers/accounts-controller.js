@@ -49,7 +49,7 @@ export const accountsController = {
     const lastName = user.lastName;
     const email = user.email;
     const password = user.password;
-   // const _id = user._id;
+    const _id = user._id;
       
       const viewData = {
         title: "Account",
@@ -57,7 +57,7 @@ export const accountsController = {
         lastName: lastName,
         email: email,
         password: password,
-     //   _id: user._id,
+        _id: _id,
       };
       response.render("account-view", viewData);
     },
@@ -65,20 +65,20 @@ export const accountsController = {
   
    async update(request, response) {
    console.log(request.body);
-   const userId = request.params.userid;
    const user = await accountsController.getLoggedInUser(request);
    const firstName = request.body.firstName;
    const lastName = request.body.lastName;
    const email = request.body.email;
    const password = request.body.password;
- //  const _id = request.body.userId;
+   const _id = request.body._id;
+    
    
     const updatedUser = {
         firstName: firstName,
         lastName: lastName,
         email: email,
         password: password,
-   //     _id: userId,
+        _id: user._id,
      };
     
     

@@ -142,15 +142,6 @@
       "stationid": "12fed35b-ff5e-4e13-aa1c-5c4546f66c7d"
     },
     {
-      "code": null,
-      "temperature": null,
-      "windSpeed": null,
-      "pressure": null,
-      "currentHour": "2024-07-13 22:49:23",
-      "_id": "b6d54116-eb03-42bb-9ba2-bb6aa835f844",
-      "stationid": "12fed35b-ff5e-4e13-aa1c-5c4546f66c7d"
-    },
-    {
       "code": 303,
       "temperature": 50,
       "windSpeed": 566,

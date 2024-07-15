@@ -2,164 +2,39 @@
   "file": "./models/stations.json",
   "stations": [
     {
-      "title": "Tralee",
-      "latitude": "123",
-      "longitude": "160",
-      "userid": "1b520665-ab86-4472-a595-d27f9883f131",
-      "_id": "7799c2de-9d07-4c9e-97be-202a6c56d9b8"
+      "title": "Edinburgh",
+      "latitude": "45",
+      "longitude": "200",
+      "userid": "236b66e0-e8c1-412a-8652-3e2720499b99",
+      "_id": "bfec7c4f-3875-4045-a28f-4a1e35ff359d"
     },
     {
-      "title": "Parma",
-      "latitude": "43",
-      "longitude": "234",
-      "_id": "b57d3316-ceaa-4bfb-9d40-c99322f9c326",
-      "reports": [
-        {
-          "code": 200,
-          "temperature": 23,
-          "windSpeed": 20,
-          "windDirection": "South-southeast (SSE)",
-          "pressure": 234,
-          "currentHour": "2024-07-13 16:47:28",
-          "_id": "3d09d36d-bf95-4d8c-a0ef-743ae785a520",
-          "stationid": "b57d3316-ceaa-4bfb-9d40-c99322f9c326"
-        },
-        {
-          "code": 303,
-          "temperature": 50,
-          "windSpeed": 566,
-          "windDirection": "East-northeast (ENE)",
-          "pressure": 999,
-          "currentHour": "2024-07-13 22:50:10",
-          "_id": "0675f5bb-d416-446b-9c0e-cbef9684dd4c",
-          "stationid": "b57d3316-ceaa-4bfb-9d40-c99322f9c326"
-        }
-      ],
-      "maxTemp": 50,
-      "minTemp": 23,
-      "maxPressure": 999,
-      "minPressure": 234,
-      "maxWindSpeed": 566,
-      "minWindSpeed": 20,
-      "weatherType": "Drizzle",
-      "iconCode": "https://openweathermap.org/img/wn/09d@2x.png",
-      "temperature": 50,
-      "tempFar": 122,
-      "pressure": 999,
-      "wind": 566,
-      "windDirect": "East-northeast (ENE)"
-    },
-    {
-      "title": "New York",
-      "latitude": "34",
-      "longitude": "12",
-      "_id": "12fed35b-ff5e-4e13-aa1c-5c4546f66c7d",
-      "reports": [
-        {
-          "code": 230,
-          "temperature": 53,
-          "windSpeed": 90,
-          "windDirection": "South-southwest (SSW)",
-          "pressure": 23,
-          "currentHour": "2024-07-13 19:55:29",
-          "_id": "4c5146e7-bcab-4b1c-a5e4-bdee1e937eab",
-          "stationid": "12fed35b-ff5e-4e13-aa1c-5c4546f66c7d"
-        },
-        {
-          "code": null,
-          "temperature": null,
-          "windSpeed": null,
-          "pressure": null,
-          "currentHour": "2024-07-13 22:49:23",
-          "_id": "b6d54116-eb03-42bb-9ba2-bb6aa835f844",
-          "stationid": "12fed35b-ff5e-4e13-aa1c-5c4546f66c7d"
-        }
-      ],
-      "maxTemp": 53,
-      "minTemp": null,
-      "maxPressure": 23,
-      "minPressure": null,
-      "maxWindSpeed": 90,
-      "minWindSpeed": null,
-      "weatherType": "Clear",
-      "iconCode": "https://openweathermap.org/img/wn/01d@2x.png",
-      "temperature": null,
-      "tempFar": 32,
-      "pressure": null,
-      "windDirect": "South-southwest (SSW)",
-      "wind": null
-    },
-    {
-      "title": "Galway",
+      "title": "Calgary",
       "latitude": "23",
-      "longitude": "234",
-      "userid": "e4b9871c-ec6c-4c17-b98c-f3ee4cf77010",
-      "_id": "79b158f5-4065-45dd-b450-c2fafae1bae8",
-      "reports": [
-        {
-          "code": 723,
-          "temperature": 45,
-          "windSpeed": 200,
-          "windDirection": "North-northwest (NNW)",
-          "pressure": 23,
-          "currentHour": "2024-07-12 16:28:17",
-          "_id": "e3d4842f-b8f9-4d36-90e9-8e1527602cd1",
-          "stationid": "79b158f5-4065-45dd-b450-c2fafae1bae8"
-        },
-        {
-          "code": 300,
-          "temperature": 78,
-          "windSpeed": 900,
-          "windDirection": "West-southwest (WSW)",
-          "pressure": 13,
-          "currentHour": "2024-07-12 16:28:34",
-          "_id": "bda074a3-495e-43ee-8693-b67238fc1d41",
-          "stationid": "79b158f5-4065-45dd-b450-c2fafae1bae8"
-        }
-      ],
-      "maxTemp": 78,
-      "minTemp": 45,
-      "maxPressure": 23,
-      "minPressure": 13,
-      "maxWindSpeed": 900,
-      "minWindSpeed": 200,
-      "weatherType": "Clear",
-      "iconCode": "https://openweathermap.org/img/wn/50d@2x.png"
+      "longitude": "2",
+      "userid": "236b66e0-e8c1-412a-8652-3e2720499b99",
+      "_id": "547cdc0d-e424-4c79-a418-2543947d1181"
     },
     {
-      "userid": "e4b9871c-ec6c-4c17-b98c-f3ee4cf77010",
-      "_id": "2cb90c08-2bca-474e-913f-97ecd29a06ab"
+      "title": "Naples",
+      "latitude": "23",
+      "longitude": "67",
+      "userid": "1ccd6a07-13bb-4d99-88de-80863a4346aa",
+      "_id": "4963775c-274f-4952-acf4-930da5008595"
     },
     {
-      "title": "Philadelphia, Pennsylvania",
-      "latitude": "23.9000",
-      "longitude": "2.87654",
-      "_id": "e337f983-7c10-41f0-b2d8-9732a2fb4772",
-      "reports": [
-        {
-          "code": 234,
-          "temperature": 12,
-          "windSpeed": 1200,
-          "windDirection": "South-southeast (SSE)",
-          "pressure": 23,
-          "currentHour": "2024-07-13 19:46:25",
-          "_id": "93e70599-49c0-412b-9b5e-446b6ad41399",
-          "stationid": "e337f983-7c10-41f0-b2d8-9732a2fb4772"
-        }
-      ],
-      "temperature": 12,
-      "tempFar": 53.6,
-      "maxTemp": 12,
-      "minTemp": 12,
-      "pressure": 23,
-      "maxPressure": 23,
-      "minPressure": 23,
-      "wind": 1200,
-      "maxWindSpeed": 1200,
-      "minWindSpeed": 1200,
-      "weatherType": "Clear",
-      "iconCode": "https://openweathermap.org/img/wn/01d@2x.png",
-      "windDirect": "South-southeast (SSE)"
+      "title": "Milan",
+      "latitude": "34",
+      "longitude": "-78",
+      "userid": "c585417b-ff00-4359-826b-6ccaf8d89e15",
+      "_id": "4075ecfc-4261-481d-94b1-615d23c8fc56"
+    },
+    {
+      "title": "Warsaw",
+      "latitude": "34",
+      "longitude": "2345",
+      "userid": "cb48cff2-6d0a-40d5-b277-93ce618475d5",
+      "_id": "66f0fdda-6a62-4f1d-b14a-4e2a0db5a311"
     }
   ]
 }

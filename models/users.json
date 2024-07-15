@@ -2,29 +2,30 @@
   "file": "./models/users.json",
   "users": [
     {
-      "firstName": "Andrea",
-      "lastName": "Am",
-      "email": "marisa.amatucci@gmail.com",
-      "password": "estamos76"
-    },
-    {
-      "firstName": "Andrea",
-      "lastName": "Mana",
-      "email": "andybig@gmail.com",
-      "password": "Yoestoy76"
-    },
-    {
-      "firstName": "Mark",
-      "lastName": "Bim",
-      "email": "nardinocchi76@gmail.com",
+      "firstName": "Andy",
+      "lastName": "Nardinocchi",
+      "email": "oviajantepelomundo76@gmail.com",
       "password": "estamos76"
     },
     {
       "firstName": "Andy",
-      "lastName": "Gian",
-      "email": "oviajantepelomundo76@gmail.com",
+      "lastName": "Mana",
+      "email": "andrea.nardinocchi76@gmail.com",
       "password": "estamos76",
-      "_id": "e4b9871c-ec6c-4c17-b98c-f3ee4cf77010"
+      "_id": "1ccd6a07-13bb-4d99-88de-80863a4346aa"
+    },
+    {
+      "firstName": "Paul",
+      "lastName": "Biggy",
+      "email": "andrea.nardinocchi@gmail.com",
+      "password": "estamos76"
+    },
+    {
+      "firstName": "mara",
+      "lastName": "tanarrrrrrrrrrrrrr",
+      "email": "tana@gmail.com",
+      "password": "estamos76",
+      "_id": "cb48cff2-6d0a-40d5-b277-93ce618475d5"
     }
   ]
 }
