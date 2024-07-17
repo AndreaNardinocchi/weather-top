@@ -13,6 +13,14 @@ export const weatherstationAnalytics = {
     return sortedStations;
  },
   
+  getTitle(station) {
+    let title = null;
+    if (station.reports>0) {
+    title = station.reports[0];
+    }
+    return title;
+  },
+
 //   getLatestReport(stations) {
   
 //    let currentHours = stations.currentHour;
@@ -229,6 +237,7 @@ export const weatherstationAnalytics = {
    const reports = await reportStore.getReportsByStationId(station._id);
    if (reports.length > 0) {
       const temperature = dashboardAnalytics.getTemperature(station);
+      const feelsLike = dashboardAnalytics.getFeelsLike(station);
       const tempFar = dashboardAnalytics.getTempFar(station);
       const maxTemp = dashboardAnalytics.getMaxTemp(station);
       const minTemp = dashboardAnalytics.getMinTemp(station);
@@ -245,6 +254,7 @@ export const weatherstationAnalytics = {
       const weatherType = dashboardAnalytics.getWeatherType(station);
       const newStation = {};
       newStation['temperature'] = temperature;
+      newStation['feelsLike'] = feelsLike;
       newStation['tempFar'] = tempFar;
       newStation['maxTemp'] = maxTemp;
       newStation['minTemp'] = minTemp;

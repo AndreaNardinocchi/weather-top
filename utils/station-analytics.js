@@ -129,7 +129,7 @@ export const stationAnalytics = {
     temperatureReport = station.reports[station.reports.length-1];
     if (station.reports.length > 0) {
        for (let i = 0; i < station.reports.length; i++) {
-         if((station.reports[i].temperature>=-40) && (station.reports[i].temperature<=55)) {
+         if((station.reports[i].temperature>=-40) && (station.reports[i].temperature<=300)) {
             temperatureReport = station.reports[i].temperature;
          } else {
            temperatureReport = "##"
@@ -146,7 +146,7 @@ export const stationAnalytics = {
     tempFarReport = station.reports[station.reports.length-1];
     if (station.reports.length > 0) {
        for (let i = 0; i < station.reports.length; i++) {
-         if((station.reports[i].temperature>=-200) && (station.reports[i].temperature<200)) {
+         if((station.reports[i].temperature>=-200) && (station.reports[i].temperature<1000)) {
             tempFarReport = (station.reports[i].temperature * 1.8) + 32;
          } else {
            tempFarReport = "##"
@@ -208,29 +208,29 @@ for (let i = 0; i <1; i++) {
       
   
     if ((iconCodeReport.code  >= 200) && (iconCodeReport.code  <= 232)) {
-      iconCodeReport = "https://openweathermap.org/img/wn/11d@2x.png";
+      iconCodeReport = "11d";
   } else if ((iconCodeReport.code  >= 300) && (iconCodeReport.code  <= 321)) {
-    iconCodeReport = "https://openweathermap.org/img/wn/09d@2x.png";
+    iconCodeReport = "09d";
   } else if ((iconCodeReport.code  >= 500) && (iconCodeReport.code  <= 504)) {
-    iconCodeReport = "https://openweathermap.org/img/wn/10d@2x.png";
+    iconCodeReport = "10d";
   } else if (iconCodeReport.code  === 511) {
-    iconCodeReport = "https://openweathermap.org/img/wn/13d@2x.png";
+    iconCodeReport = "13d";
   } else if ((iconCodeReport.code  >= 520) && (iconCodeReport.code  <= 531)) {
-    iconCodeReport = "https://openweathermap.org/img/wn/09d@2x.png";
+    iconCodeReport = "09d";
   } else if ((iconCodeReport.code  >= 600) && (iconCodeReport.code  <= 622)) {
-    iconCodeReport = "https://openweathermap.org/img/wn/13d@2x.png";
+    iconCodeReport = "13d";
   } else if ((iconCodeReport.code  >= 701) && (iconCodeReport.code  <= 781)) {
-    iconCodeReport = "https://openweathermap.org/img/wn/50d@2x.png";
+    iconCodeReport = "50d";
   } else if ((iconCodeReport.code  === 800)) {
-    iconCodeReport = "https://openweathermap.org/img/wn/01d@2x.png";
+    iconCodeReport = "01d";
   } else if ((iconCodeReport.code  === 801)) {
-    iconCodeReport = "https://openweathermap.org/img/wn/02d@2x.png";
+    iconCodeReport = "02d";
     } else if ((iconCodeReport.code  === 802)) {
-      iconCodeReport = "https://openweathermap.org/img/wn/03d@2x.png";
+      iconCodeReport = "03d";
     }  else if ((iconCodeReport.code  >= 803) && (iconCodeReport.code  <= 804)) {
-    iconCodeReport = "https://openweathermap.org/img/wn/04d@2x.png";
+    iconCodeReport = "04d";
    } else {
-    iconCodeReport = "https://openweathermap.org/img/wn/01d@2x.png";
+    iconCodeReport = "01d";
    }
     }
         return iconCodeReport;

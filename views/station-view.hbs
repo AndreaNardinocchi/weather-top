@@ -14,13 +14,13 @@
 <section class="box section">
   {{> list-reports}}
   {{> add-report}}
-  <form class="box" action="/stationreading/{{station._id}}/addreport" method="POST"  >
+  <form class="box" action="/station/{{station._id}}/addautoreport" method="POST"  >
 
   <button class="button is-danger ">Auto Generating Reading</button>
 </form>
  <section class="section">
     <h2 class="subtitle">Enter location for reading</h2>
-    <form action="/stationreading/{{station._id}}/addreport" method="POST">
+    <form action="/station/{{station._id}}/addchartreport" method="POST">
       <div class="field is-horizontal">
         <div class="field-body">
           <div class="field">
@@ -36,6 +36,6 @@
       </div>
     </form>
   </section>
-
+  
 
 </section> 

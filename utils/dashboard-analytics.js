@@ -110,24 +110,24 @@ export const dashboardAnalytics = {
       
    //   weatherTypeReport = station.reports[i];
      // weatherTypeReport.code = "Thunderstorm;"
-      if(iconCodeReport=="https://openweathermap.org/img/wn/11d@2x.png") {
-        iconCodeReport = "https://openweathermap.org/img/wn/11d@2x.png";
-      } else if(iconCodeReport=="https://openweathermap.org/img/wn/09d@2x.png") {
-        iconCodeReport = "https://openweathermap.org/img/wn/09d@2x.png";
-      } else if(iconCodeReport=="https://openweathermap.org/img/wn/10d@2x.png") {
-        iconCodeReport = "https://openweathermap.org/img/wn/10d@2x.png";
-      } else if(iconCodeReport=="https://openweathermap.org/img/wn/13d@2x.png") {
-        iconCodeReport = "https://openweathermap.org/img/wn/13d@2x.png";
-      } else if(iconCodeReport=="https://openweathermap.org/img/wn/50d@2x.png") {
-        iconCodeReport = "https://openweathermap.org/img/wn/50d@2x.png";
-      } else if(iconCodeReport=="https://openweathermap.org/img/wn/01d@2x.png") {
-        iconCodeReport = "https://openweathermap.org/img/wn/01d@2x.png";
-      } else if(iconCodeReport=="https://openweathermap.org/img/wn/02d@2x.png") {
-        iconCodeReport = "https://openweathermap.org/img/wn/02d@2x.png";
-      } else if(iconCodeReport=="https://openweathermap.org/img/wn/03d@2x.png") {
-        iconCodeReport = "https://openweathermap.org/img/wn/03d@2x.png";
-      } else if(iconCodeReport=="https://openweathermap.org/img/wn/04d@2x.png") {
-        iconCodeReport = "https://openweathermap.org/img/wn/04d@2x.png";
+      if(iconCodeReport==="11d") {
+        iconCodeReport = "11d";
+      } else if(iconCodeReport==="09d") {
+        iconCodeReport = "09d";
+      } else if(iconCodeReport==="10d") {
+        iconCodeReport = "10d";
+      } else if(iconCodeReport==="13d") {
+        iconCodeReport = "13d";
+      } else if(iconCodeReport==="50d") {
+        iconCodeReport = "50d";
+      } else if(iconCodeReport==="01d") {
+        iconCodeReport = "01d";
+      } else if(iconCodeReport==="02d") {
+        iconCodeReport = "02d";
+      } else if(iconCodeReport==="03d") {
+        iconCodeReport = "03d";
+      } else if(iconCodeReport==="04d") {
+        iconCodeReport = "04d";
       }
 //} 
 }
@@ -268,6 +268,23 @@ export const dashboardAnalytics = {
     return tempFarReport;
   },
   
+       getFeelsLike(station) {
+    let feelsLikeReport = null;
+    feelsLikeReport = station.reports[station.reports.length-1];
+    if (station.reports.length > 0) {
+       for (let i = 0; i < station.reports.length; i++) {
+         if((station.reports[i].feelsLikeReport>=-40) && (station.reports[i].feelsLikeReport<=55)) {
+            feelsLikeReport = station.reports[i].feelsLikeReport;
+         } else {
+           feelsLikeReport = "##"
+           
+         }
+    
+         }
+    }
+    return feelsLikeReport;
+  },
+  
  
   
        getWind(station) {
@@ -339,5 +356,3 @@ export const dashboardAnalytics = {
   },
   
 };
-
-

@@ -49,6 +49,7 @@ export const weatherStation = {
     station.latitude = station.latitude;
     station.longitude = station.longitude;
     station.temperature = newStation.temperature;
+    station.feelsLike = newStation.feelsLike;
     station.tempFar = newStation.tempFar;
     station.maxTemp = newStation.maxTemp;
     station.minTemp = newStation.minTemp;
