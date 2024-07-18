@@ -239,7 +239,7 @@ export const dashboardAnalytics = {
     temperatureReport = station.reports[station.reports.length-1];
     if (station.reports.length > 0) {
        for (let i = 0; i < station.reports.length; i++) {
-         if((station.reports[i].temperature>=-40) && (station.reports[i].temperature<=55)) {
+         if((station.reports[i].temperature>=-100) && (station.reports[i].temperature<=1000)) {
             temperatureReport = station.reports[i].temperature;
          } else {
            temperatureReport = "##"
@@ -256,7 +256,7 @@ export const dashboardAnalytics = {
     tempFarReport = station.reports[station.reports.length-1];
     if (station.reports.length > 0) {
        for (let i = 0; i < station.reports.length; i++) {
-         if((station.reports[i].temperature>=-200) && (station.reports[i].temperature<200)) {
+         if((station.reports[i].temperature>=-500) && (station.reports[i].temperature<= 2000)) {
             tempFarReport = (station.reports[i].temperature * 1.8) + 32;
          } else {
            tempFarReport = "##"

@@ -93,8 +93,8 @@ export const stationAnalytics = {
   },
   
    getWindDirectionReport(station) {
-    let windDirectionReport = null;
-    windDirectionReport = station.reports[station.reports.length-1];
+    
+    let windDirectionReport = station.reports[station.reports.length-1];
     if (station.reports.length > 0) {
        for (let i = 0; i < station.reports.length; i++) {
          if(station.reports[i].windDirection==="West-northwest (WNW)") {
@@ -117,8 +117,10 @@ export const stationAnalytics = {
        }
             if(station.reports[i].windDirection==="West-southwest (WSW)") {
       windDirectionReport= "West-southwest (WSW)";
-       }
-    
+       //  } else {
+       //   windDirectionReport = "";
+       // }
+            }
        }
     }
     return windDirectionReport;
@@ -168,13 +170,28 @@ export const stationAnalytics = {
          if((station.reports[i].windSpeed>=0) && (station.reports[i].temperature<=2000)) {
             windReport = station.reports[i].windSpeed;
          } else {
-           windReport = "##"
-           
+           windReport = "";
          }
+       }
+    }
+    return windReport;
+  },
+  
+        getWindDir(station) {
+    let windDir = null;
+    windDir = station.reports[station.reports.length-1];
+    if (station.reports.length > 0) {
+       for (let i = 0; i < station.reports.length; i++) {
+         if((station.reports[i].windDir>=0) && (station.reports[i].windDir<=2000)) {
+            windDir = station.reports[i].windDir;
+          } else {
+            windDir = " ";
+           
+          }
     
          }
     }
-    return windReport;
+    return windDir;
   },
   
       getPressureReport(station) {
@@ -184,29 +201,82 @@ export const stationAnalytics = {
        for (let i = 0; i < station.reports.length; i++) {
          if((station.reports[i].pressure>=0) && (station.reports[i].pressure<=2000)) {
             pressureReport = station.reports[i].pressure;
-         } else {
-           pressureReport = "##"
+          } else {
+            pressureReport = "##"
            
-         }
+          }
     
          }
     }
     return pressureReport;
   },
   
+    getFeelsLikeReport(station) {
+    let feelsLikeReport = null;
+    feelsLikeReport = station.reports[station.reports.length-1];
+    if (station.reports.length > 0) {
+       for (let i = 0; i < station.reports.length; i++) {
+         if((station.reports[i].pressure>=-200) && (station.reports[i].pressure<=2000)) {
+            feelsLikeReport = station.reports[i].feelsLikeReport;
+          } else {
+            feelsLikeReport = " "
+           
+          }
+    
+         }
+    }
+    return feelsLikeReport;
+  },
+  
+    getHumidityReport(station) {
+    let humidityReport = null;
+    humidityReport = station.reports[station.reports.length-1];
+    if (station.reports.length > 0) {
+       for (let i = 0; i < station.reports.length; i++) {
+         if((station.reports[i].pressure>=0) && (station.reports[i].pressure<=2000)) {
+            humidityReport = station.reports[i].feelsLikeReport;
+          } else {
+            humidityReport = " ";
+           
+          }
+    
+         }
+    }
+    return humidityReport;
+  },
+  
+//   getWeatherDescReport(station) {
+//     let weatherDescReport = null;
+//     weatherDescReport = station.reports[station.reports.length-1];
+//     if (station.reports.length > 0) {
+//        for (let i = 0; i < station.reports.length; i++) {
+//          if(station.reports[i].weatherDescReport === weatherDescReport) {
+//             weatherDescReport = station.reports[i].weatherDescReport;
+//           } else {
+//             weatherDescReport = " ";
+           
+//           }
+    
+//          }
+//     }
+//     return weatherDescReport;
+//   },
+    
+  
+
 
   
     getIconCodeReport(station) {
       if (station.reports.length > 0) {
     // Icons changing based upon the weather code          
-   //let iconCodeReport = station.reports[0];
+   let iconCodeReport = null;
         // https://www.freecodecamp.org/news/how-to-get-the-last-item-in-an-array-in-javascript/
-        let iconCodeReport= station.reports[station.reports.length-1];
+         
+  iconCodeReport= station.reports[station.reports.length-1];
 
 
 for (let i = 0; i <1; i++) {
       
-  
     if ((iconCodeReport.code  >= 200) && (iconCodeReport.code  <= 232)) {
       iconCodeReport = "11d";
   } else if ((iconCodeReport.code  >= 300) && (iconCodeReport.code  <= 321)) {
@@ -230,13 +300,14 @@ for (let i = 0; i <1; i++) {
     }  else if ((iconCodeReport.code  >= 803) && (iconCodeReport.code  <= 804)) {
     iconCodeReport = "04d";
    } else {
-    iconCodeReport = "01d";
+     iconCodeReport = "01d";
    }
+ 
     }
         return iconCodeReport;
         console.log(iconCodeReport);
-  }
-    return null;
+   }
+     return null;
 },
 
   

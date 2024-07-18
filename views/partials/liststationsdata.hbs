@@ -51,12 +51,12 @@
             <p class="content is-size-7 has-text-white">
               <br>
             {{weatherTypeReport}}<br>
-              Feels like: {{feelsLikeReport}} °C<br>
-              Hum: {{humidityReport}} %
+              Feels like: {{feelsLikeReport}} °C <span style="font-size:10px;" class=" is-pulled-right">*Auto report only</span> <br>            
+              Hum: {{humidityReport}} % <span style="font-size:10px;" class=" is-pulled-right">*Auto report only</span> 
            
             </p>
             
-            <p></p>
+          
           </article>
         </div>
       </div>
@@ -105,7 +105,7 @@
           <article class="card-content">
             <p class="content is-size-7 has-text-white">
               Cur: {{windReport}} kMh<br>
-              Dir: {{windDirection}} <br>
+              Dir: {{windDirection}} {{windDir}} <br>
               Max: {{maxWindSpeedReport.windSpeed}} kMh<br>
               Min: {{minWindSpeedReport.windSpeed}} kMh
             </p>
