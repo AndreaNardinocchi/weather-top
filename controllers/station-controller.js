@@ -154,7 +154,7 @@ export const stationController = {
   //   response.redirect("/station/" + station._id);
 //   },
   
-  await reportStore.addAutoReport(station._id, report);
+  //await reportStore.addAutoReport(station._id, report);
  //  response.redirect("/station/" + station._id);
     response.render("station-view" , viewData);
   },

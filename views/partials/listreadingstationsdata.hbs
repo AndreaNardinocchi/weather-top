@@ -1,5 +1,6 @@
 
 
+
 {{#with station }}
 
   <section class=" columns  pt-4 pb-4">
@@ -30,7 +31,7 @@
       </div>
     </section>
   </section>
-  
+  {{/with }}
 
   <section class="column ">
     <section class="card has-background-black">
@@ -62,7 +63,6 @@
       </div>
     </section>
   </section>
-    {{/with }}
   <section class="column ">
     <section class="card has-background-black">
       <header class="card-header">
@@ -79,10 +79,10 @@
         <div class="column is-12">
           <article class="card-content">
             <p class="temperature content is-size-7 has-text-white">
-              Cur:  {{station.temperature}} °C<br>
-              CurF: {{station.tempFar}} °F<br>
-              Max:  {{station.maxTempReport}} °C<br>
-              Min:  {{station.minTempReport}} °C
+              Cur:  {{temperatureReport}} °C<br>
+              CurF: {{tempFarReport}} °F<br>
+              Max:  {{maxTempReport.temperature}} °C<br>
+              Min:  {{minTempReport.temperature}} °C
             </p>
           </article>
         </div>
@@ -105,10 +105,10 @@
         <div class="column is-12">
           <article class="card-content">
             <p class="content is-size-7 has-text-white">
-              <br>
-              <br>
-              Cur: {{station.windSpeed}} kMh<br>
-              Dir: {{station.windDir}} <br>
+              Cur: {{windReport}} kMh<br>
+              Dir: {{windDirection}} {{windDir}} <br>
+              Max: {{maxWindSpeedReport.windSpeed}} kMh<br>
+              Min: {{minWindSpeedReport.windSpeed}} kMh
             </p>
           </article>
         </div>
@@ -132,10 +132,9 @@
           <article class="card-content">
             <p class="content is-size-7 has-text-white">
               <br>
-              <br>
-              <br>
-              Cur: {{station.pressure}} hPa<br>
-            
+              Cur: {{pressureReport}} hPa<br>
+              Max: {{maxPressureReport.pressure}} hPa<br>
+              Min: {{minPressureReport.pressure}} hPa
             </p>
             
           </article>
@@ -144,5 +143,3 @@
     </section>
   </section>
 </section>
-
-
