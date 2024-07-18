@@ -128,13 +128,15 @@ export const dashboardAnalytics = {
         iconCodeReport = "03d";
       } else if(iconCodeReport==="04d") {
         iconCodeReport = "04d";
+      } else {
+        iconCodeReport = "01d";
       }
 //} 
 }
  return iconCodeReport;
 }
 
- return null;
+ return "01d";
 
       
 

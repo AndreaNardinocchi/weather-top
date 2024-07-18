@@ -102,14 +102,13 @@ export const stationController = {
     const title = station.title;
     let report = {};
  //   let reporte={}
-  const lng = station.longitude;
-  const lat = station.latitude;
+
   //  const lat = request.body.lat || "52.2502793";
    // const lng = request.body.lng || "-7.1177689";
-    const latLongRequestUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lng}&units=metric&appid=c3e26a0b5387b001f6f548f5710c0baf`;
+ 
     const cityRequestUrl  = `https://api.openweathermap.org/data/2.5/weather?q=${title}&units=metric&appid=c3e26a0b5387b001f6f548f5710c0baf`;
     const cityResult = await axios.get(cityRequestUrl);
-   const latLongResult = await axios.get(latLongRequestUrl);
+ 
     if (cityResult.status == 200) {
       const currentWeather = cityResult.data;
       report.currentHour = dayjs().format("YYYY-MM-DD HH:mm:ss");
@@ -131,7 +130,11 @@ export const stationController = {
       report.windDir = currentWeather.wind.deg; 
     
    }
-     
+     const lng = station.longitude; 
+     const lat = station.latitude;
+    
+      const latLongRequestUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lng}&units=metric&appid=c3e26a0b5387b001f6f548f5710c0baf`;
+      const latLongResult = await axios.get(latLongRequestUrl);
     if (latLongResult.status == 200) {
       report.tempTrend = [];
       report.trendLabels = [];
@@ -152,8 +155,8 @@ export const stationController = {
 //   },
   
   await reportStore.addAutoReport(station._id, report);
-    response.redirect("/station/" + station._id);
-    response.render("station-view" + station._id, viewData);
+ //  response.redirect("/station/" + station._id);
+    response.render("station-view" , viewData);
   },
 
   

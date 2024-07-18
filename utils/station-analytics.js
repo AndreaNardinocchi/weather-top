@@ -117,9 +117,9 @@ export const stationAnalytics = {
        }
             if(station.reports[i].windDirection==="West-southwest (WSW)") {
       windDirectionReport= "West-southwest (WSW)";
-       //  } else {
-       //   windDirectionReport = "";
-       // }
+        } else {
+          windDirectionReport = "";
+        
             }
        }
     }
@@ -300,14 +300,14 @@ for (let i = 0; i <1; i++) {
     }  else if ((iconCodeReport.code  >= 803) && (iconCodeReport.code  <= 804)) {
     iconCodeReport = "04d";
    } else {
-     iconCodeReport = "01d";
-   }
+      iconCodeReport = "01d";
+    }
  
     }
         return iconCodeReport;
         console.log(iconCodeReport);
    }
-     return null;
+     return "01d";
 },
 
   
@@ -365,5 +365,42 @@ for (let i = 0; i <1; i++) {
   }
  return null;
   },
-
+  
+  
+          getLatitude(station) {
+    let latitude = null;
+    latitude = station.reports[station.reports.length-1];
+    if (station.reports.length > 0) {
+       for (let i = 0; i < station.reports.length; i++) {
+         if((station.reports[i].latitude>=-2000) && (station.reports[i].latitude<=2000)) {
+            latitude = station.reports[i].latitude;
+         } else {
+           latitude = "##"
+           
+         }
+    
+         }
+    }
+    return latitude;
+  },
+  
+          getLongitude(station) {
+    let longitude = null;
+    longitude = station.reports[station.reports.length-1];
+    if (station.reports.length > 0) {
+       for (let i = 0; i < station.reports.length; i++) {
+         if((station.reports[i].longitude>=-2000) && (station.reports[i].longitude<=2000)) {
+            longitude = station.reports[i].longitude;
+         } else {
+           longitude = "##"
+           
+         }
+    
+         }
+    }
+    return longitude;
+  },
+  
 };
+
+
