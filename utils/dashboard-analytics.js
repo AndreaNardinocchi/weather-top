@@ -92,163 +92,123 @@ export const dashboardAnalytics = {
     return minPressureReport.pressure;
   },
 
-
-
   getIconCode(station) {
-  
     let iconCodeReport = stationAnalytics.getIconCodeReport(station);
-    
-  if (station.reports.length > 0) {
+    if (station.reports.length > 0) {
     // Icons changing based upon the weather code
-
-  
- // weatherTypeReport  = station.reports[0];
-    
-    for (let i = 0; i < station.reports.length; i++) {
-  
-  //  if (station.reports[i].code < ((weatherTypeReport.code  >= 200) && (weatherTypeReport.code  <= 232))) {
-      
-   //   weatherTypeReport = station.reports[i];
-     // weatherTypeReport.code = "Thunderstorm;"
-      if(iconCodeReport==="11d") {
-        iconCodeReport = "11d";
-      } else if(iconCodeReport==="09d") {
-        iconCodeReport = "09d";
-      } else if(iconCodeReport==="10d") {
-        iconCodeReport = "10d";
-      } else if(iconCodeReport==="13d") {
-        iconCodeReport = "13d";
-      } else if(iconCodeReport==="50d") {
-        iconCodeReport = "50d";
-      } else if(iconCodeReport==="01d") {
-        iconCodeReport = "01d";
-      } else if(iconCodeReport==="02d") {
-        iconCodeReport = "02d";
-      } else if(iconCodeReport==="03d") {
-        iconCodeReport = "03d";
-      } else if(iconCodeReport==="04d") {
-        iconCodeReport = "04d";
-      } else {
-        iconCodeReport = "01d";
+      for (let i = 0; i < station.reports.length; i++) {
+        if(iconCodeReport==="11d") {
+          iconCodeReport = "11d";
+        } else if(iconCodeReport==="09d") {
+          iconCodeReport = "09d";
+        } else if(iconCodeReport==="10d") {
+          iconCodeReport = "10d";
+        } else if(iconCodeReport==="13d") {
+          iconCodeReport = "13d";
+        } else if(iconCodeReport==="50d") {
+          iconCodeReport = "50d";
+        } else if(iconCodeReport==="01d") {
+          iconCodeReport = "01d";
+        } else if(iconCodeReport==="02d") {
+          iconCodeReport = "02d";
+        } else if(iconCodeReport==="03d") {
+          iconCodeReport = "03d";
+        } else if(iconCodeReport==="04d") {
+          iconCodeReport = "04d";
+        } else {
+          iconCodeReport = "01d";
+        }
       }
-//} 
-}
- return iconCodeReport;
-}
-
- return "01d";
-
-      
-
+      return iconCodeReport;
+    }
+    return "01d";
   },
   
-
-
-
   getWeatherType(station) {
-  
     let weatherTypeReport = stationAnalytics.getWeatherTypeReport(station);
-    
-  if (station.reports.length > 0) {
+    if (station.reports.length > 0) {
     // Icons changing based upon the weather code
-
-  
- // weatherTypeReport  = station.reports[0];
-    
-    for (let i = 0; i < station.reports.length; i++) {
-  
-  //  if (station.reports[i].code < ((weatherTypeReport.code  >= 200) && (weatherTypeReport.code  <= 232))) {
-      
-   //   weatherTypeReport = station.reports[i];
-     // weatherTypeReport.code = "Thunderstorm;"
-     if(weatherTypeReport=="Thunderstorm") {
-      weatherTypeReport = "Thunderstorm";
-    } else if(weatherTypeReport=="Drizzle") {
-        weatherTypeReport = "Drizzle";
-      } else if(weatherTypeReport=="Rain") {
-        weatherTypeReport = "Rain";
-      } else if(weatherTypeReport=="Snow") {
-        weatherTypeReport = "Snow";
-      } else if(weatherTypeReport=="Mist") {
-        weatherTypeReport = "Mist";
-      } else if(weatherTypeReport=="Smoke") {
-        weatherTypeReport = "Smoke";
-      } else if(weatherTypeReport=="Haze") {
-        weatherTypeReport = "Haze";
-      } else if(weatherTypeReport=="Dust") {
-        weatherTypeReport = "Dust";
-      } else if(weatherTypeReport=="Fog") {
-        weatherTypeReport = "Fog";
-      } else if(weatherTypeReport=="Sand") {
-        weatherTypeReport = "Sand";
-      } else if(weatherTypeReport=="Ash") {
-        weatherTypeReport = "Ash";
-      }  else if(weatherTypeReport=="Squall") {
-        weatherTypeReport = "Squall";
-      } else if(weatherTypeReport=="Tornado") {
-        weatherTypeReport = "Tornado";
-      } else if(weatherTypeReport=="Clear") {
-        weatherTypeReport = "Clear";
-      } else if(weatherTypeReport=="Clouds") {
-        weatherTypeReport = "Clouds";
+      for (let i = 0; i < station.reports.length; i++) {
+        if(weatherTypeReport=="Thunderstorm") {
+          weatherTypeReport = "Thunderstorm";
+        } else if(weatherTypeReport=="Drizzle") {
+          weatherTypeReport = "Drizzle";
+        } else if(weatherTypeReport=="Rain") {
+          weatherTypeReport = "Rain";
+        } else if(weatherTypeReport=="Snow") {
+          weatherTypeReport = "Snow";
+        } else if(weatherTypeReport=="Mist") {
+          weatherTypeReport = "Mist";
+        } else if(weatherTypeReport=="Smoke") {
+          weatherTypeReport = "Smoke";
+        } else if(weatherTypeReport=="Haze") {
+          weatherTypeReport = "Haze";
+        } else if(weatherTypeReport=="Dust") {
+          weatherTypeReport = "Dust";
+        } else if(weatherTypeReport=="Fog") {
+          weatherTypeReport = "Fog";
+        } else if(weatherTypeReport=="Sand") {
+          weatherTypeReport = "Sand";
+        } else if(weatherTypeReport=="Ash") {
+          weatherTypeReport = "Ash";
+        }  else if(weatherTypeReport=="Squall") {
+          weatherTypeReport = "Squall";
+        } else if(weatherTypeReport=="Tornado") {
+          weatherTypeReport = "Tornado";
+        } else if(weatherTypeReport=="Clear") {
+          weatherTypeReport = "Clear";
+        } else if(weatherTypeReport=="Clouds") {
+          weatherTypeReport = "Clouds";
+        }
       }
-
-//} 
-}
- return weatherTypeReport;
-}
-
- return null;
-
-      
-
+      return weatherTypeReport;
+    }
+    return null;
   },
   
    getWindDirect(station) {
     let windDirectionReport = null;
     windDirectionReport = station.reports[station.reports.length];
     if (station.reports.length > 0) {
-       for (let i = 0; i < station.reports.length; i++) {
-         if(station.reports[i].windDirection==="West-northwest (WNW)") {
-      windDirectionReport= "West-northwest (WNW)";
-       }
-         if(station.reports[i].windDirection==="North-northeast (NNE)") {
-      windDirectionReport= "North-northeast (NNE)";
-       }
-         if(station.reports[i].windDirection==="East-northeast (ENE)") {
-      windDirectionReport= "East-northeast (ENE)";
-       }
-         if(station.reports[i].windDirection==="East-southeast (ESE)") {
-      windDirectionReport= "East-southeast (ESE)";
-       }
-          if(station.reports[i].windDirection==="South-southeast (SSE)") {
-      windDirectionReport= "South-southeast (SSE)";
-       }
-         if(station.reports[i].windDirection==="South-southwest (SSW)") {
-      windDirectionReport= "South-southwest (SSW)";
-       }
-            if(station.reports[i].windDirection==="West-southwest (WSW)") {
-      windDirectionReport= "West-southwest (WSW)";
-       }
-    
-       }
+      for (let i = 0; i < station.reports.length; i++) {
+        if(station.reports[i].windDirection==="West-northwest (WNW)") {
+          windDirectionReport= "West-northwest (WNW)";
+        }
+        if(station.reports[i].windDirection==="North-northeast (NNE)") {
+          windDirectionReport= "North-northeast (NNE)";
+        }
+        if(station.reports[i].windDirection==="East-northeast (ENE)") {
+          windDirectionReport= "East-northeast (ENE)";
+        }
+        if(station.reports[i].windDirection==="East-southeast (ESE)") {
+          windDirectionReport= "East-southeast (ESE)";
+        }
+        if(station.reports[i].windDirection==="South-southeast (SSE)") {
+          windDirectionReport= "South-southeast (SSE)";
+        }
+        if(station.reports[i].windDirection==="South-southwest (SSW)") {
+          windDirectionReport= "South-southwest (SSW)";
+        }
+        if(station.reports[i].windDirection==="West-southwest (WSW)") {
+          windDirectionReport= "West-southwest (WSW)";
+        }
+      }
+      return windDirectionReport;
     }
-    return windDirectionReport;
+     return null;
   },
   
-     getTemperature(station) {
+  getTemperature(station) {
     let temperatureReport = null;
     temperatureReport = station.reports[station.reports.length-1];
     if (station.reports.length > 0) {
-       for (let i = 0; i < station.reports.length; i++) {
-         if((station.reports[i].temperature>=-100) && (station.reports[i].temperature<=1000)) {
-            temperatureReport = station.reports[i].temperature;
-         } else {
-           temperatureReport = "##"
-           
-         }
-    
-         }
+      for (let i = 0; i < station.reports.length; i++) {
+        if((station.reports[i].temperature>=-100) && (station.reports[i].temperature<=1000)) {
+          temperatureReport = station.reports[i].temperature;
+        } else {
+          temperatureReport = "##";
+        }
+      }
     }
     return temperatureReport;
   },
@@ -261,16 +221,14 @@ export const dashboardAnalytics = {
          if((station.reports[i].temperature>=-500) && (station.reports[i].temperature<= 2000)) {
             tempFarReport = (station.reports[i].temperature * 1.8) + 32;
          } else {
-           tempFarReport = "##"
-           
+           tempFarReport = "##";
          }
-    
-         }
+       }
     }
     return tempFarReport;
   },
   
-       getFeelsLike(station) {
+  getFeelsLike(station) {
     let feelsLikeReport = null;
     feelsLikeReport = station.reports[station.reports.length-1];
     if (station.reports.length > 0) {
@@ -278,18 +236,14 @@ export const dashboardAnalytics = {
          if((station.reports[i].feelsLikeReport>=-40) && (station.reports[i].feelsLikeReport<=55)) {
             feelsLikeReport = station.reports[i].feelsLikeReport;
          } else {
-           feelsLikeReport = "##"
-           
+           feelsLikeReport = "##";
          }
-    
-         }
+       }
     }
     return feelsLikeReport;
   },
   
- 
-  
-       getWind(station) {
+  getWind(station) {
     let windReport = null;
     windReport = station.reports[station.reports.length-1];
     if (station.reports.length > 0) {
@@ -297,16 +251,14 @@ export const dashboardAnalytics = {
          if((station.reports[i].windSpeed>=0) && (station.reports[i].temperature<=2000)) {
             windReport = station.reports[i].windSpeed;
          } else {
-           windReport = "##"
-           
+           windReport = "##";
          }
-    
-         }
+       }
     }
     return windReport;
   },
   
-      getPressure(station) {
+  getPressure(station) {
     let pressureReport = null;
     pressureReport = station.reports[station.reports.length-1];
     if (station.reports.length > 0) {
@@ -314,47 +266,10 @@ export const dashboardAnalytics = {
          if((station.reports[i].pressure>=0) && (station.reports[i].pressure<=2000)) {
             pressureReport = station.reports[i].pressure;
          } else {
-           pressureReport = "##"
-           
+           pressureReport = "##";  
          }
-    
-         }
+       }
     }
     return pressureReport;
   },
-  
-        getLatitude(station) {
-    let latitude = null;
-    latitude = station.reports[station.reports.length-1];
-    if (station.reports.length > 0) {
-       for (let i = 0; i < station.reports.length; i++) {
-         if((station.reports[i].latitude>=-2000) && (station.reports[i].latitude<=2000)) {
-            latitude = station.reports[i].lattude;
-         } else {
-           latitude = "##"
-           
-         }
-    
-         }
-    }
-    return latitude;
-  },
-  
-          getLongitude(station) {
-    let longitude = null;
-    longitude = station.reports[station.reports.length-1];
-    if (station.reports.length > 0) {
-       for (let i = 0; i < station.reports.length; i++) {
-         if((station.reports[i].longitude>=-2000) && (station.reports[i].longitude<=2000)) {
-            longitude = station.reports[i].lattude;
-         } else {
-           longitude = "##"
-           
-         }
-    
-         }
-    }
-    return longitude;
-  },
-  
 };

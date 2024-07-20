@@ -1,35 +1,21 @@
 {{> menu active="station" }}
-<section class="pt-6">
-</section>
+<section class="pt-6"></section>
 <section class="pt-6 has-text-centered">
-<p class=" title">
-          {{station.title}}
-        </p>
-  
-<hr>
+  <p class=" title">
+    {{station.title}}
+  </p>
+  <hr>
 </section>
 <section class="box mt-3">
-{{> liststationsdata}}
+  {{> liststationsdata}}
 </section>
-
 <section class="box section">
   {{> list-reports}}
- 
   {{> add-report}}
-  
   <form class="box" action="/station/{{station._id}}/addautoreport" method="POST"  >
-
-  <button class="button is-danger ">Auto Generating Reading</button>
-</form>
-    
-    <form class="box" action="/station/{{station._id}}/addchartreport" method="POST"  >
-
-  <button class="button is-link ">Chart Generating Reading</button>
-</form>
-  
-  
-  
-  
-
-  
-</section> 
+    <button class="button is-danger ">Auto Generating Reading</button>
+  </form>
+  <form class="box" action="/station/{{station._id}}/addchartreport" method="POST"  >
+    <button class="button is-link ">Chart Generating Reading</button>
+  </form>
+</section>

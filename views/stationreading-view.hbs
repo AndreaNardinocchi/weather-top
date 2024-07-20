@@ -1,31 +1,24 @@
 {{> menu active="station" }}
-<section class="pt-6">
-</section>
+<section class="pt-6"></section>
 <section class="pt-6 has-text-centered">
-<p class=" title">
-          {{station.title}}
-        </p>
-  
-<hr>
+  <p class=" title">
+    {{station.title}}
+  </p>
+  <hr>
 </section>
 <section class="box mt-3">
-{{> listreadingstationsdata}}
-<div class="box" id="chart"></div>
+  {{> listreadingstationsdata}}
+  <div class="box" id="chart"></div>
 </section>
 <section class="box section">
   {{> liststationreading-reports}}
-  
-
- <section >
-   <a href="/dashboard">
-        <button class="button is-link">Go back to the Dashboard</button>
-   </a>
-      
+  <section >
+    <a href="/dashboard">
+    <button class="button is-link">Go back to the Dashboard</button>
+    </a>
   </section>
 </section>
-
-   <script>
-
+<script>
 const data = {
     labels: [
       {{#each station.trendLabels}}
@@ -43,13 +36,11 @@ const data = {
       }
     ]
   }
-
   const chart = new frappe.Chart("#chart", {
     title: "Temperature Trend",
     data: data,
     type: 'line',
     height: 250,
   })
-
 </script> 
-</section> 
+

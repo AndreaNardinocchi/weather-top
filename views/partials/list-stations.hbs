@@ -1,154 +1,141 @@
-
 {{#each stations}}
 <div class="box box-link-hover-shadow">
-<section class=" columns pt-2">
-  <section class="column ">
-    <section class="card has-background-black">
-      <header class="card-header">
-        <p class="card-header-title is-size-4  has-text-white title">
-          {{title}}
-        </p>
-      </header>
-      <div class="card-image">
-        <figure class="image is-64x64 m-auto">
-          <img src="https://i.ibb.co/JKm3cnP/placeholder.png" alt="placeholder" border="0">
-        </figure>
-      </div>
-      <div class="columns">
-        <div class="column is-12">
-          <article class="card-content">
-            <p class="content is-size-6 has-text-white">
-              Lat: {{latitude}} °<br>
-              Long: {{longitude}} °
-            </p>
-            <p> </p>
-          </article>
+  <section class=" columns pt-2">
+    <section class="column ">
+      <section class="card has-background-black">
+        <header class="card-header">
+          <p class="card-header-title is-size-4  has-text-white title">
+            {{title}}
+          </p>
+        </header>
+        <div class="card-image">
+          <figure class="image is-64x64 m-auto">
+            <img src="https://i.ibb.co/JKm3cnP/placeholder.png" alt="placeholder" border="0">
+          </figure>
         </div>
-      </div>
+        <div class="columns">
+          <div class="column is-12">
+            <article class="card-content">
+              <p class="content is-size-6 has-text-white">
+                Lat: {{latitude}} °<br>
+                Long: {{longitude}} °
+              </p>
+              <p> </p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </section>
+    <section class="column ">
+      <section class="card has-background-black">
+        <header class="card-header">
+          <p class="card-header-title is-size-4  has-text-white title">
+            Weather
+          </p>
+        </header>
+        <div class="card-image">
+          <figure class="image is-64x64 m-auto ">
+            <img src="https://openweathermap.org/img/wn/{{{iconCode}}}@2x.png">
+          </figure>
+        </div>
+        <div class="columns">
+          <div class="column is-12">
+            <article class="card-content">
+              <p class="content is-size-6 has-text-white">
+                <br>
+                {{weatherType}}
+              </p>
+              <p>
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </section>
+    <section class="column ">
+      <section class="card has-background-black">
+        <header class="card-header">
+          <p class="card-header-title is-size-4  has-text-white title">
+            Temp
+          </p>
+        </header>
+        <div class="card-image">
+          <figure class="image is-64x64 m-auto">
+            <img src="https://i.ibb.co/ZgMm51B/high-temperature.png" alt="High temperature" border="0">
+          </figure>
+        </div>
+        <div class="columns">
+          <div class="column is-12">
+            <article class="card-content">
+              <p class="temperature content is-size-7 has-text-white">
+                Cur:  {{temperature}} °C<br>
+                CurF: {{tempFar}} °F<br>
+                Max:  {{maxTemp}} °C<br>
+                Min:  {{minTemp}} °C
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </section>
+    <section class="column ">
+      <section class="card has-background-black">
+        <header class="card-header">
+          <p class="card-header-title is-size-4  has-text-white title">
+            Wind
+          </p>
+        </header>
+        <div class="card-image">
+          <figure class="image is-64x64 m-auto">
+            <img src="https://i.ibb.co/vDs4ftw/wind.png" alt="wind" border="0">
+          </figure>
+        </div>
+        <div class="columns">
+          <div class="column is-12">
+            <article class="card-content">
+              <p class="content is-size-7 has-text-white">
+                Cur: {{wind}} kMh<br>
+                Dir: {{windDirect}}<br>
+                Max: {{maxWindSpeed}} kMh<br>
+                Min: {{minWindSpeed}} kMh
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </section>
+    <section class="column ">
+      <section class="card has-background-black">
+        <header class="card-header">
+          <p class="card-header-title is-size-4  has-text-white title">
+            Pressure
+          </p>
+        </header>
+        <div class="card-image">
+          <figure class="image is-64x64 m-auto">
+            <img src="https://i.ibb.co/8DqT60g/gauge.png" alt="gauge" border="0">
+          </figure>
+        </div>
+        <div class="columns">
+          <div class="column is-12">
+            <article class="card-content">
+              <p class="content is-size-7 has-text-white">
+                <br>
+                Cur: {{pressure}} hPa<br>
+                Max: {{maxPressure}} hPa<br>
+                Min: {{minPressure}} hPa
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
     </section>
   </section>
-  
-
-  <section class="column ">
-    <section class="card has-background-black">
-      <header class="card-header">
-        <p class="card-header-title is-size-4  has-text-white title">
-          Weather
-        </p>
-      </header>
-      <div class="card-image">
-        <figure class="image is-64x64 m-auto ">
-          <img src="https://openweathermap.org/img/wn/{{{iconCode}}}@2x.png">
-        </figure>
-
-      </div>
-      <div class="columns">
-        <div class="column is-12">
-          <article class="card-content">
-            <p class="content is-size-6 has-text-white">
-              <br>
-            {{weatherType}}
-            </p>
-            <p>
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-  </section>
-  <section class="column ">
-    <section class="card has-background-black">
-      <header class="card-header">
-        <p class="card-header-title is-size-4  has-text-white title">
-          Temp
-        </p>
-      </header>
-      <div class="card-image">
-        <figure class="image is-64x64 m-auto">
-          <img src="https://i.ibb.co/ZgMm51B/high-temperature.png" alt="High temperature" border="0">
-        </figure>
-      </div>
-      <div class="columns">
-        <div class="column is-12">
-          <article class="card-content">
-            <p class="temperature content is-size-7 has-text-white">
-              Cur:  {{temperature}} °C<br>
-              CurF: {{tempFar}} °F<br>
-              Max:  {{maxTemp}} °C<br>
-              Min:  {{minTemp}} °C
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-  </section>
-  <section class="column ">
-    <section class="card has-background-black">
-      <header class="card-header">
-        <p class="card-header-title is-size-4  has-text-white title">
-          Wind
-        </p>
-      </header>
-      <div class="card-image">
-        <figure class="image is-64x64 m-auto">
-          <img src="https://i.ibb.co/vDs4ftw/wind.png" alt="wind" border="0">
-        </figure>
-      </div>
-      <div class="columns">
-        <div class="column is-12">
-          <article class="card-content">
-            <p class="content is-size-7 has-text-white">
-              Cur: {{wind}} kMh<br>
-              Dir: {{windDirect}}<br>
-              Max: {{maxWindSpeed}} kMh<br>
-              Min: {{minWindSpeed}} kMh
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-  </section>
-  <section class="column ">
-    <section class="card has-background-black">
-      <header class="card-header">
-        <p class="card-header-title is-size-4  has-text-white title">
-          Pressure
-        </p>
-      </header>
-      <div class="card-image">
-        <figure class="image is-64x64 m-auto">
-          <img src="https://i.ibb.co/8DqT60g/gauge.png" alt="gauge" border="0">
-        </figure>
-      </div>
-      <div class="columns">
-        <div class="column is-12">
-          <article class="card-content">
-            <p class="content is-size-7 has-text-white">
-              <br>
-              Cur: {{pressure}} hPa<br>
-              Max: {{maxPressure}} hPa<br>
-              Min: {{minPressure}} hPa
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-  </section>
-  
-  </section>
- 
-
- 
   <a href="/station/{{_id}}" class="button">
-    {{>icons/open}}
+  {{>icons/open}}
   </a>
   <a href="/dashboard/deletestation/{{_id}}" class="button">
-
-    {{>icons/delete}}
+  {{>icons/delete}}
   </a>
 </div>
 {{/each}}
-
-
-
-

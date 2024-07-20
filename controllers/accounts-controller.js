@@ -1,6 +1,5 @@
 import { userStore } from "../models/user-store.js";
 
-
 export const accountsController = {
   index(request, response) {
     const viewData = {
@@ -35,7 +34,7 @@ export const accountsController = {
     response.render("account-view", viewData);
   },
   
-  
+
   async register(request, response) {
     const user = request.body;
     await userStore.addUser(user);
@@ -50,7 +49,6 @@ export const accountsController = {
     const email = user.email;
     const password = user.password;
     const _id = user._id;
-      
       const viewData = {
         title: "Account",
         firstName: firstName,
@@ -71,8 +69,6 @@ export const accountsController = {
    const email = request.body.email;
    const password = request.body.password;
    const _id = request.body._id;
-    
-   
     const updatedUser = {
         firstName: firstName,
         lastName: lastName,

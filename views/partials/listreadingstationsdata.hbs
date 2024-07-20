@@ -1,7 +1,5 @@
 {{#with station }}
-
-  <section class=" columns  pt-4 pb-4">
-     
+<section class=" columns  pt-4 pb-4">
   <section class="column ">
     <section class="card has-background-black">
       <header class="card-header">
@@ -22,14 +20,11 @@
               Long: {{longitude}} °
             </p>
             <p></p>
-            
           </article>
         </div>
       </div>
     </section>
   </section>
-  
-
   <section class="column ">
     <section class="card has-background-black">
       <header class="card-header">
@@ -41,26 +36,22 @@
         <figure class="image is-64x64 m-auto ">
           <img src="https://openweathermap.org/img/wn/{{{iconCodeReport}}}@2x.png">
         </figure>
-
       </div>
       <div class="columns">
         <div class="column is-12">
           <article class="card-content">
             <p class="content is-size-7 has-text-white">
               <br>
-            {{weatherTypeReport}}<br>
+              {{weatherTypeReport}}<br>
               Feels like: {{feelsLikeReport}} °C <span style="font-size:10px;" class=" is-pulled-right">*Auto report only</span> <br>            
               Hum: {{humidityReport}} % <span style="font-size:10px;" class=" is-pulled-right">*Auto report only</span> 
-           
             </p>
-            
-          
           </article>
         </div>
       </div>
     </section>
   </section>
-    {{/with }}
+  {{/with }}
   <section class="column ">
     <section class="card has-background-black">
       <header class="card-header">
@@ -133,16 +124,13 @@
               <br>
               <br>
               Cur: {{station.pressure}} hPa<br>
-            
             </p>
-            
           </article>
         </div>
       </div>
     </section>
   </section>
 </section>
-
 
 
 

@@ -5,27 +5,19 @@ import { stationAnalytics } from "../utils/station-analytics.js";
 import { reportStore } from "../models/report-store.js";
 import { weatherstationAnalytics } from "../utils/weatherstation-analytics.js";
 import { dashboardAnalytics } from "../utils/dashboard-analytics.js";
-// import axios from "axios";
-
 import dayjs from "dayjs";
-
-// const apiKey = "YOUR API KEY HERE";
-// const weatherRequestUrl = `https://api.openweathermap.org/data/2.5/weather?q=Tramore,Ireland&units=metric&appid=c3e26a0b5387b001f6f548f5710c0baf`;
-
 
 
 export const dashboardController = {
   
   async index(request, response) {
- 
     const loggedInUser = await accountsController.getLoggedInUser(request);
     const stations = await weatherStation.getStationsByUserId(loggedInUser._id);
     const sortedStations = weatherstationAnalytics.getSortedStations(stations); 
-    
     const viewData = {
       title: "Forecast Stations Dashboard",
       stations: sortedStations,
-    };
+    }; 
   
     console.log("dashboard rendering");
     response.cookie("weathertop", loggedInUser._id);
@@ -34,8 +26,6 @@ export const dashboardController = {
   
    async addReport(request, response) {
     const station = await weatherStation.getStationById(request.params.id);
-     
- 
     const newReport = {
       code: Number(request.body.code),
       temperature: Number(request.body.temperature),
@@ -44,9 +34,6 @@ export const dashboardController = {
       windSpeed: Number(request.body.windSpeed),
       pressure: Number(request.body.pressure),
       currentHour: dayjs().format("YYYY-MM-DD HH:mm:ss")// Adding current time
-      
-   
-   
     };
     console.log(`adding report ${newReport.code}`);
     await reportStore.addReport(station._id, newReport);
@@ -68,10 +55,7 @@ export const dashboardController = {
     await weatherStation.addStation(newStation);
     response.redirect("/dashboard");
   },
-
-
-  
-  
+ 
   async deleteStation(request, response) {
     const stationId = request.params.id;
     console.log(`Deleting Station ${stationId}`);

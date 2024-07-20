@@ -1,89 +1,52 @@
 {{> menu active="dashboard"}}
-
 <section class="section mt-6 pt-6">
-  {{> list-stations}}
- 
-  <form class="box" action="/dashboard/addstation" method="POST">
-  <div class="field is-horizontal pt-6">
-    <div class="field-body">
-      <div class="field">
-        <label class="label">Station Name</label>
-        <input class="input" type="text" placeholder="Enter station name" name="title">
-      </div>
-         <div class="field">
-        <label class="label">Latitude</label>
-        <input class="input" type="text" placeholder="Enter latitude" name="latitude">
-      </div>
-      <div class="field">
-        <label class="label">Longitude</label>
-        <input class="input" type="text" placeholder="Enter longitude" name="longitude">
-      </div>
-      </div>
-    </div>
-  <button class="button is-link ">Add Station</button>
-</form>
-  
-  <div  class="mt-6" id="map" style="z-index: -1;color: white; box-shadow:
-  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-  0 12.5px 10px rgba(0, 0, 0, 0.06),
-  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-  0 100px 80px rgba(0, 0, 0, 0.12);border-radius: 15px; height: 600px;"></div>
-   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-     crossorigin="">
-
+{{> list-stations}}
+{{> add-station}}
+<div  class="mt-6" id="map" style=" height: 600px;"></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin="">
+</script>
+  <script>
+    // import {dashboardController } from "./dashboard-controller.js";
+    // https://leafletjs.com/examples/quick-start/
+    var map = L.map('map').setView([51.505, -0.09], 13);
     
-  </script>
-
-<script>
-  
-  // https://leafletjs.com/examples/quick-start/
-  
-  var map = L.map('map').setView([51.505, -0.09], 13);
-     
-   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 3,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
-  
-   var marker = L.marker([51.5, -0.09]).addTo(map);
+    }).addTo(map);
+    
+    var lat = station.latitude;
+    var lng = station.longitude;
+    
+    var marker = L.marker([lng,lat]).addTo(map);
+    console.log(station.latitude);
+    var circle = L.circle([51.508, -0.11], {
+      color: 'red',
+      fillColor: '#f03',
+      fillOpacity: 0.5,
+      radius: 500
+    }).addTo(map);
 
-  var circle = L.circle([51.508, -0.11], {
-    color: 'red',
-    fillColor: '#f03',
-    fillOpacity: 0.5,
-    radius: 500
-}).addTo(map);
-  
-  var polygon = L.polygon([
-    [51.509, -0.08],
-    [51.503, -0.06],
-    [51.51, -0.047]
-]).addTo(map);
-  
-  marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
-circle.bindPopup("I am a circle.");
-polygon.bindPopup("I am a polygon.");
- 
-var popup = L.popup();
-
-function onMapClick(e) {
-    popup
+    var polygon = L.polygon([
+      [51.509, -0.08],
+      [51.503, -0.06],
+      [51.51, -0.047]
+    ]).addTo(map);
+    
+    marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+    circle.bindPopup("I am a circle.");
+    polygon.bindPopup("I am a polygon.");
+    
+    var popup = L.popup();
+    
+    function onMapClick(e) {
+      popup
         .setLatLng(e.latlng)
         .setContent("You clicked the map at " + e.latlng.toString())
         .openOn(map);
-}
-
-map.on('click', onMapClick);
-        
-        
-        
-        
-        
-        
-  
-</script>
-
+    }
+    map.on('click', onMapClick);
+  </script>
 </section>

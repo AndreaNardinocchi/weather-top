@@ -25,7 +25,7 @@ export const weatherStation = {
     return list;
   },
   
-     async getStationsByUserId(id) {
+  async getStationsByUserId(id) {
     await db.read();
     return db.data.stations.filter((station) => station.userid === id);
   },
@@ -61,14 +61,7 @@ export const weatherStation = {
     station.maxWindSpeed = newStation.maxWindSpeed;
     station.minWindSpeed = newStation.minWindSpeed;
     station.weatherType = newStation.weatherType;
-   // station.a = newStation.a;
     station.iconCode = newStation.iconCode;
-    //station.minCode = newStation.minCode;
     await db.write();
   }
-  
-  //  async getStationsByUserId(userid) {
-  //   await db.read();
-  //   return db.data.stations.filter((station) => station.userid === userid);
-  // },
 };

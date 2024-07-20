@@ -2,7 +2,6 @@ import { dashboardAnalytics } from "./dashboard-analytics.js";
 import { weatherStation } from "../models/station-store.js";
 import { reportStore } from "../models/report-store.js";
 import { stationAnalytics } from "./station-analytics.js";
-//import { stationController } from "./station-controller.js";
 import dayjs from "dayjs";
 
 export const weatherstationAnalytics = {
@@ -21,19 +20,6 @@ export const weatherstationAnalytics = {
     return title;
   },
 
-//   getLatestReport(stations) {
-  
-//    let currentHours = stations.currentHour;
-   
-//    const maxDates = currentHours.map((currentHour) => dayjs(currentHour))
-   
-//    const maxDate = maxDates.reduce((accumulator, curVal) =>
-//      curVal && accumulator.isBefore(curVal) ? accumulator : curVal,
-//    )
- 
-//    console.log(maxDate) // "2020-01-02"
-//    return maxDate;
-//  },
   
 //   // https://stackoverflow.com/questions/6439915/how-to-set-a-javascript-object-values-dynamically/6439954#6439954
 //   getStationData(station) {
@@ -249,8 +235,6 @@ export const weatherstationAnalytics = {
       const maxPressure = dashboardAnalytics.getMaxPressure(station);
       const minPressure = dashboardAnalytics.getMinPressure(station);
       const iconCode = dashboardAnalytics.getIconCode(station);
-      //const minCode = dashboardAnalytics.getMinCode(station);
-    //  const a = dashboardAnalytics.getWeatherType(station);
       const weatherType = dashboardAnalytics.getWeatherType(station);
       const newStation = {};
       newStation['temperature'] = temperature;
@@ -267,8 +251,6 @@ export const weatherstationAnalytics = {
       newStation['minPressure'] = minPressure;
       newStation['iconCode'] = iconCode;
       newStation['weatherType'] = weatherType;
-      // newStation['a'] = a;
-      // newStation['minCode'] = minCode;
       console.log(newStation + iconCode);
       console.log("Updating station data for " + station.title);
       weatherStation.updateStationDetails(station, newStation);

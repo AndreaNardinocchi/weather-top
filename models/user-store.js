@@ -17,7 +17,7 @@ export const userStore = {
     return user;
   },
 
-   async getStationsByUserId(id) {
+  async getStationsByUserId(id) {
     await db.read();
     return db.data.stations.filter((station) => station.userid === id);
   },
@@ -27,7 +27,7 @@ export const userStore = {
     return db.data.users.find((user) => user.email === email);
   },
   
-    async getUserById(id) {
+  async getUserById(id) {
     await db.read();
     return db.data.users.find((user) => user._id === id);
   },
@@ -44,9 +44,7 @@ export const userStore = {
     await db.write();
   },
   
-  // async updateUser(userId, updatedUser) {
-    async updateUser(user, updatedUser) {
-   // const user = await this.getUserById(userId);
+  async updateUser(user, updatedUser) {
     user._id = updatedUser._id;
     user.firstName = updatedUser.firstName;
     user.lastName = updatedUser.lastName;
