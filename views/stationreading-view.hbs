@@ -9,30 +9,18 @@
 <hr>
 </section>
 <section class="box mt-3">
-{{> readingstationsdata}}
+{{> listreadingstationsdata}}
 <div class="box" id="chart"></div>
 </section>
 <section class="box section">
-  {{> listreading-reports}}
+  {{> liststationreading-reports}}
   
 
- <section class="section">
-    <h2 class="subtitle">Enter location for reading</h2>
-    <form action="/station/addreport" method="POST">
-      <div class="field is-horizontal">
-        <div class="field-body">
-          <div class="field">
-            <input class="input" type="text" placeholder="52.160858" name="lat">
-          </div>
-          <div class="field">
-            <input class="input" type="text" placeholder="-7.152420" name="lng">
-          </div>
-        </div>
-      </div>
-      <div class="field is-grouped">
-        <button class="button is-link">Add Reading</button>
-      </div>
-    </form>
+ <section >
+   <a href="/dashboard">
+        <button class="button is-link">Go back to the Dashboard</button>
+   </a>
+      
   </section>
 </section>
 

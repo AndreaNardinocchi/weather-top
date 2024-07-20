@@ -300,8 +300,8 @@ for (let i = 0; i <1; i++) {
     }  else if ((iconCodeReport.code  >= 803) && (iconCodeReport.code  <= 804)) {
     iconCodeReport = "04d";
    } else {
-      iconCodeReport = "01d";
-    }
+       iconCodeReport = "01d";
+     }
  
     }
         return iconCodeReport;
