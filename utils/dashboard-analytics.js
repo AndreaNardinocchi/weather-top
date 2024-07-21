@@ -1,19 +1,8 @@
+/* This util js file contains all methods used for the dashboard view */
 import { stationAnalytics } from "./station-analytics.js";
 
 export const dashboardAnalytics = {
-  getFastestWindReport(station) {
-    let fastestWindReport = null;
-    if (station.reports.length > 0) {
-      fastestWindReport = station.reports[0];
-      for (let i = 0; i < station.reports.length; i++) {
-        if (station.reports[i].windSpeed > fastestWindReport.windSpeed) {
-          fastestWindReport = station.reports[i];
-        }
-      }
-    }
-    return fastestWindReport;
-  },
-
+  
   getMaxTemp(station) {
     let maxTempReport = null;
     if (station.reports.length > 0) {
@@ -93,6 +82,7 @@ export const dashboardAnalytics = {
   },
 
   getIconCode(station) {
+    // Retrieving the iconCodeReport value from stationAnalytics.getIconCodeReport(station); method.
     let iconCodeReport = stationAnalytics.getIconCodeReport(station);
     if (station.reports.length > 0) {
     // Icons changing based upon the weather code
@@ -115,16 +105,16 @@ export const dashboardAnalytics = {
           iconCodeReport = "03d";
         } else if(iconCodeReport==="04d") {
           iconCodeReport = "04d";
-        } else {
-          iconCodeReport = "01d";
+        } else if(iconCodeReport==="") {
+          iconCodeReport="01d";
         }
       }
       return iconCodeReport;
     }
-    return "01d";
   },
   
   getWeatherType(station) {
+    // Retrieving the weatherTypeReport value from stationAnalytics.getWeatherTypeReport(station); method.
     let weatherTypeReport = stationAnalytics.getWeatherTypeReport(station);
     if (station.reports.length > 0) {
     // Icons changing based upon the weather code
@@ -198,6 +188,22 @@ export const dashboardAnalytics = {
      return null;
   },
   
+    getWindDir(station) {
+    let windDir = stationAnalytics.getWindDir(station);;
+    windDir = station.reports[station.reports.length-1];
+    if (station.reports.length > 0) {
+       for (let i = 0; i < station.reports.length; i++) {
+         if((station.reports[i].windDir>=0) && (station.reports[i].windDir<=2000)) {
+            windDir = station.reports[i].windDir;
+          } else {
+            windDir = " ";
+          }
+       }
+    }
+    return windDir;
+  },
+  
+  
   getTemperature(station) {
     let temperatureReport = null;
     temperatureReport = station.reports[station.reports.length-1];
@@ -219,7 +225,7 @@ export const dashboardAnalytics = {
     if (station.reports.length > 0) {
        for (let i = 0; i < station.reports.length; i++) {
          if((station.reports[i].temperature>=-500) && (station.reports[i].temperature<= 2000)) {
-            tempFarReport = (station.reports[i].temperature * 1.8) + 32;
+            tempFarReport = ((station.reports[i].temperature * 1.8) + 32).toFixed(2);
          } else {
            tempFarReport = "##";
          }
@@ -241,6 +247,21 @@ export const dashboardAnalytics = {
        }
     }
     return feelsLikeReport;
+  },
+  
+  getHumidity(station) {
+    let humidityReport = null;
+    humidityReport = station.reports[station.reports.length-1];
+    if (station.reports.length > 0) {
+       for (let i = 0; i < station.reports.length; i++) {
+         if((station.reports[i].pressure>=0) && (station.reports[i].pressure<=2000)) {
+            humidityReport = station.reports[i].humidityReport;
+          } else {
+            humidityReport = " ";
+          }
+       }
+    }
+    return humidityReport;
   },
   
   getWind(station) {

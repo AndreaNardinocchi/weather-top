@@ -1,3 +1,5 @@
+/* This controller enables the 'Lifestyle' page view to render. */
+
 export const lifestyleController = {
     index(request, response) {
       const viewData = {

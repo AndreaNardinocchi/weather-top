@@ -1,18 +1,7 @@
+/* This util js file contains all methods used for the station view */
 import dayjs from "dayjs";
 
 export const stationAnalytics = {
-  getFastestWindReport(station) {
-    let fastestWindReport = null;
-    if (station.reports.length > 0) {
-      fastestWindReport = station.reports[0];
-      for (let i = 0; i < station.reports.length; i++) {
-        if (station.reports[i].windSpeed > fastestWindReport.windSpeed) {
-          fastestWindReport = station.reports[i];
-        }
-      }
-    }
-    return fastestWindReport;
-  },
 
   getMaxTempReport(station) {
     let maxTempReport = null;
@@ -93,7 +82,7 @@ export const stationAnalytics = {
   },
   
    getWindDirectionReport(station) {
-     let windDirectionReport = station.reports[station.reports.length-1];
+     let windDirectionReport = station.reports[station.reports.length];
      if (station.reports.length > 0) {
        for (let i = 0; i < station.reports.length; i++) {
          if(station.reports[i].windDirection==="West-northwest (WNW)") {
@@ -116,9 +105,7 @@ export const stationAnalytics = {
          }
          if(station.reports[i].windDirection==="West-southwest (WSW)") {
            windDirectionReport= "West-southwest (WSW)";
-         } else {
-           windDirectionReport = "";
-         }
+         } 
        }
        return windDirectionReport;
     }
@@ -140,13 +127,14 @@ export const stationAnalytics = {
     return temperatureReport;
   },
   
+  // The method to calculate Farheneit degress has been taken from https://www.metric-conversions.org/temperature/celsius-to-fahrenheit.htm 
   getTempFarReport(station) {
     let tempFarReport = null;
     tempFarReport = station.reports[station.reports.length-1];
     if (station.reports.length > 0) {
        for (let i = 0; i < station.reports.length; i++) {
          if((station.reports[i].temperature>=-200) && (station.reports[i].temperature<1000)) {
-           tempFarReport = (station.reports[i].temperature * 1.8) + 32;
+           tempFarReport = ((station.reports[i].temperature * 1.8) + 32).toFixed(2); // https://www.w3schools.com/howto/howto_js_format_number_dec.asp
          } else {
            tempFarReport = "##";
          }
@@ -221,7 +209,7 @@ export const stationAnalytics = {
     if (station.reports.length > 0) {
        for (let i = 0; i < station.reports.length; i++) {
          if((station.reports[i].pressure>=0) && (station.reports[i].pressure<=2000)) {
-            humidityReport = station.reports[i].feelsLikeReport;
+            humidityReport = station.reports[i].humidityReport;
           } else {
             humidityReport = " ";
           }
@@ -234,7 +222,7 @@ export const stationAnalytics = {
       if (station.reports.length > 0) {
     // Icons changing based upon the weather code          
         let iconCodeReport = null;
-        // https://www.freecodecamp.org/news/how-to-get-the-last-item-in-an-array-in-javascript/
+        // To ensure that the report shown is the most up-to-date https://www.freecodecamp.org/news/how-to-get-the-last-item-in-an-array-in-javascript/
         iconCodeReport= station.reports[station.reports.length-1];
         for (let i = 0; i <1; i++) {
           if ((iconCodeReport.code  >= 200) && (iconCodeReport.code  <= 232)) {
@@ -273,7 +261,7 @@ export const stationAnalytics = {
     if (station.reports.length > 0) {
     // Icons changing based upon the weather code
       let weatherTypeReport = null;
-      //  https://www.freecodecamp.org/news/how-to-get-the-last-item-in-an-array-in-javascript/
+      // To ensure that the report shown is the most up-to-date https://www.freecodecamp.org/news/how-to-get-the-last-item-in-an-array-in-javascript/
       weatherTypeReport  = station.reports[station.reports.length-1];
       for (let i = 0; i < 1; i++) {
         if ((weatherTypeReport.code  >= 200) && (weatherTypeReport.code  <= 232)) {

@@ -35,15 +35,17 @@
         </header>
         <div class="card-image">
           <figure class="image is-64x64 m-auto ">
-            <img src="https://openweathermap.org/img/wn/{{{iconCode}}}@2x.png">
+            <!-- https://dev.to/stephenafamo/the-best-way-to-style-broken-images-29k Broken icon!-->
+            <img src="https://openweathermap.org/img/wn/{{{iconCode}}}@2x.png" onerror="this.onerror=null;this.src='https://openweathermap.org/img/wn/01d@2x.png';" >
           </figure>
         </div>
         <div class="columns">
           <div class="column is-12">
             <article class="card-content">
-              <p class="content is-size-6 has-text-white">
-                <br>
-                {{weatherType}}
+              <p class="content is-size-7 has-text-white">
+              {{weatherType}}<br>
+              Feels like: {{feelsLike}} °C <span style="font-size:10px;" class=" is-pulled-right">*Auto report only</span> <br>            
+              Hum: {{humidity}} % <span style="font-size:10px;" class=" is-pulled-right">*Auto report only</span> 
               </p>
               <p>
               </p>
@@ -95,7 +97,7 @@
             <article class="card-content">
               <p class="content is-size-7 has-text-white">
                 Cur: {{wind}} kMh<br>
-                Dir: {{windDirect}}<br>
+                Dir: {{windDirect}} {{windDir}}<br>
                 Max: {{maxWindSpeed}} kMh<br>
                 Min: {{minWindSpeed}} kMh
               </p>

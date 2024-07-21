@@ -1,3 +1,5 @@
+/* This controller enables the 'News' page view to render. */
+
 export const newsController = {
     index(request, response) {
       const viewData = {

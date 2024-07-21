@@ -1,3 +1,7 @@
+/* This controller enables the About page view to render.
+The below 'index' action is invoked when "/about" route is triggered.
+Console.log() is utilized for debug purposes, whereas 'render' passes the object 'viewData' */
+
 export const aboutController = {
   index(request, response) {
     const viewData = {

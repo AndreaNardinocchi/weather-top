@@ -42,6 +42,7 @@ export const weatherStation = {
     await db.write();
   },
 
+  // This action will enable
   async updateStationDetails(station, newStation) {
     station.title = station.title;
     station._id = station._id;
@@ -50,6 +51,7 @@ export const weatherStation = {
     station.longitude = station.longitude;
     station.temperature = newStation.temperature;
     station.feelsLike = newStation.feelsLike;
+    station.humidity = newStation.humidity;
     station.tempFar = newStation.tempFar;
     station.maxTemp = newStation.maxTemp;
     station.minTemp = newStation.minTemp;
@@ -57,6 +59,7 @@ export const weatherStation = {
     station.maxPressure = newStation.maxPressure;
     station.minPressure = newStation.minPressure;
     station.windDirect = newStation.windDirect;
+    station.windDir = newStation.windDir;
     station.wind = newStation.wind;
     station.maxWindSpeed = newStation.maxWindSpeed;
     station.minWindSpeed = newStation.minWindSpeed;

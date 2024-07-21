@@ -9,7 +9,7 @@
     },
     {
       "firstName": "Andy",
-      "lastName": "Mana",
+      "lastName": "Man",
       "email": "andrea.nardinocchi76@gmail.com",
       "password": "estamos76",
       "_id": "1ccd6a07-13bb-4d99-88de-80863a4346aa"
@@ -24,8 +24,22 @@
       "firstName": "mara",
       "lastName": "tanarrnnnnnnnn",
       "email": "tana@gmail.com",
-      "password": "estamos76",
+      "password": "Amatucci46=",
       "_id": "cb48cff2-6d0a-40d5-b277-93ce618475d5"
+    },
+    {
+      "firstName": "test",
+      "lastName": "test",
+      "email": "test",
+      "password": "test",
+      "_id": "98bc7ad5-a964-4ff8-a102-cded2aebc0ee"
+    },
+    {
+      "firstName": "Andy",
+      "lastName": "Nard",
+      "email": "andrea.nardinocchi76@gmail.com",
+      "password": "estamos76",
+      "_id": "49a8ddf1-97fd-407c-b9de-21c59f9997a5"
     }
   ]
 }
