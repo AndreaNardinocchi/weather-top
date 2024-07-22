@@ -1,15 +1,23 @@
 <nav class="navbar is-fixed-top has-background-primary-light" role="navigation" aria-label="main navigation" >
   <div class="navbar-brand pl-4">
-    {{> brand}}
+    <a  href="/">
+      {{> brand}}
+    </a>
+    <span class="navbar-burger" data-target="navbarMenu" aria-expanded="false">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    </span>
   </div>
-  <div id="navbarBasicExample" class="navbar-menu pr-4">
+  <div id="navbarMenu" class="navbar-menu pr-4 ">
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
           <a class="button" id="home" href="/"> Home </a>
           <a class="button" id="lifestyle" href="/lifestyle"> Lifestyle </a>
           <a class="button" id="news" href="/news"> News </a>
-          <a class = "button" id="about" class="button" href="/about"> About </a>
+          <a class = "button" id="about" href="/about"> About </a>
           <a class="button" id="login" href="/login"> Log in </a>
           <a class="button" id="signup" href="/signup"> Sign up </a>
         </div>
@@ -19,4 +27,26 @@
 </nav>
 <script>
   document.getElementById("{{active}}").classList.add("is-primary");
+</script>
+<script>
+                          document.addEventListener('DOMContentLoaded', () => {
+
+      // Get all "navbar-burger" elements
+      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+      // Add a click event on each of them
+      $navbarBurgers.forEach(el => {
+        el.addEventListener('click', () => {
+
+          // Get the target from the "data-target" attribute
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+
+          // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+
+        });
+      });
+    });
 </script>

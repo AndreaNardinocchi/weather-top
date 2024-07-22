@@ -72,6 +72,7 @@ export const stationController = {
       temperature: Number(request.body.temperature),
       windSpeed: Number(request.body.windSpeed),
       windDirection: request.body.windDirection,
+      windDir: request.body.windDir,
       windSpeed: Number(request.body.windSpeed),
       pressure: Number(request.body.pressure),
       currentHour: dayjs().format("YYYY-MM-DD HH:mm:ss") // Adding current time

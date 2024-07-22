@@ -196,7 +196,7 @@ export const dashboardAnalytics = {
          if((station.reports[i].windDir>=0) && (station.reports[i].windDir<=2000)) {
             windDir = station.reports[i].windDir;
           } else {
-            windDir = " ";
+            windDir = "## ";
           }
        }
     }
@@ -257,7 +257,7 @@ export const dashboardAnalytics = {
          if((station.reports[i].pressure>=0) && (station.reports[i].pressure<=2000)) {
             humidityReport = station.reports[i].humidityReport;
           } else {
-            humidityReport = " ";
+            humidityReport = "## ";
           }
        }
     }

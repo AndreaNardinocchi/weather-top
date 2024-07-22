@@ -1,5 +1,6 @@
 /* This controller enables the 'signup', 'login' and 'account' page views to render. 
 The models user-store js file is imported to retrieve its functions */
+
 import { userStore } from "../models/user-store.js";
 
 export const accountsController = {
@@ -95,8 +96,7 @@ export const accountsController = {
     // The cookie 'station' will be created and will contain the user's email
     response.cookie("station", user.email, user.password); 
     console.log(`updating ${user.email}`);
-    response.redirect("/login/");
-     
+    response.redirect("/login/"); 
   },
 
   /* The below 'authenticate' action is invoked when "/authenticate" route is triggered */ 
@@ -113,7 +113,7 @@ export const accountsController = {
       response.redirect("/login");
     }
   },
-
+  
   // Utility method to check wether the user exists and which user owns it
   async getLoggedInUser(request) {
     const userEmail = request.cookies.station;
